@@ -234,6 +234,16 @@ st.markdown("""
 
     hr { border-color: var(--border) !important; }
 
+    /* ── Chart descriptions ── */
+    .chart-desc {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 300;
+        line-height: 1.5;
+        margin: -0.4rem 0 0.8rem;
+    }
+    .chart-desc b { color: #8ab8c8; font-weight: 500; }
+
     /* ── Sidebar section labels ── */
     .sb-section {
         font-family: 'Barlow Condensed', sans-serif;
@@ -498,6 +508,7 @@ st.markdown(f"""
 # -----------------------------------------------------------------------------
 
 st.markdown('<div class="sec-head"><span class="dot"></span>Offensive Trends</div>', unsafe_allow_html=True)
+st.markdown('<p class="chart-desc">The peak single-season home run total and batting average distribution across all league leaders in the selected year range and filters.</p>', unsafe_allow_html=True)
 c1, c2 = st.columns([3, 2], gap="medium")
 
 with c1:
@@ -538,69 +549,73 @@ with c2:
 # -----------------------------------------------------------------------------
 
 st.markdown('<div class="sec-head"><span class="dot"></span>Player Performance</div>', unsafe_allow_html=True)
+st.markdown('<p class="chart-desc">Left: each point is one player — axes show their best recorded value for the selected stats across all years in range. Right: which franchises have the most stat-leader appearances in the events table.</p>', unsafe_allow_html=True)
 c3, c4 = st.columns([3, 2], gap="medium")
 
 with c3:
-    # Build scatter from events_df (full dataset, not filtered_events which may
-    # be filtered by stat category). Use each player's BEST value for each stat
-    # across all years in the selected year range -- one point per player.
     COL_TO_STAT = {v: k for k, v in STAT_TO_COL.items()}
     x_stat_name = COL_TO_STAT.get(stat_x, stat_x)
     y_stat_name = COL_TO_STAT.get(stat_y, stat_y)
 
-    # Year-range filtered events (ignore stat category filter for scatter)
-    yr_events = events_df[events_df["year"].between(year_range[0], year_range[1])].copy()
-    if sel_league != "Both" and "league" in yr_events.columns:
-        yr_events = yr_events[yr_events["league"] == sel_league]
-    if sel_teams and "team" in yr_events.columns:
-        yr_events = yr_events[yr_events["team"].isin(sel_teams)]
+    # ── Pivot the FULL events table into one wide row per player ─────────────
+    # Each row = one player, each column = their best-ever value for that stat.
+    # This means every single league leader entry contributes a data point,
+    # even if they only led in one stat category.
+    sc_ev = events_df.copy()
 
-    # Best (max) value per player for each axis stat across all years in range
-    def best_stat(ev, stat_name, col_name):
-        """Return each player's best (max) value for a stat, with their most
-        recent team and league — merge only on player_name so team changes
-        between seasons don't cause players to drop out."""
-        rows = ev[ev["statistic"] == stat_name][["player","team","league","year","value"]]
-        if rows.empty:
-            return pd.DataFrame(columns=["player_name","team","league", col_name])
-        # Best value per player
-        best = (rows.groupby("player")["value"]
-                    .max().reset_index()
-                    .rename(columns={"value": col_name, "player": "player_name"}))
-        # Most recent team+league for that player
-        latest = (rows.sort_values("year")
-                      .groupby("player")[["team","league"]]
-                      .last().reset_index()
-                      .rename(columns={"player": "player_name"}))
-        return best.merge(latest, on="player_name", how="left")
+    # Apply year range and league/team filters
+    sc_ev = sc_ev[sc_ev["year"].between(year_range[0], year_range[1])]
+    if sel_league != "Both" and "league" in sc_ev.columns:
+        sc_ev = sc_ev[sc_ev["league"] == sel_league]
+    if sel_teams and "team" in sc_ev.columns:
+        sc_ev = sc_ev[sc_ev["team"].isin(sel_teams)]
 
-    df_x = best_stat(yr_events, x_stat_name, stat_x)
-    df_y = best_stat(yr_events, y_stat_name, stat_y)
+    # Map statistic names to column names, drop unknowns
+    sc_ev = sc_ev.copy()
+    sc_ev["col"] = sc_ev["statistic"].map(STAT_TO_COL)
+    sc_ev = sc_ev[sc_ev["col"].notna()]
 
-    if df_x.empty or df_y.empty:
-        missing = x_stat_name if df_x.empty else y_stat_name
-        st.info(f"No data found for '{missing}'. Try a different stat combination.")
+    if sc_ev.empty:
+        st.info("No events data for selected filters.")
     else:
-        # Merge on player name only — team/league come from whichever side has them
-        sc_data = df_x.merge(df_y[["player_name", stat_y]], on="player_name", how="inner")
-        color_col = "league" if sel_league == "Both" else "team"
-        color_col = color_col if (color_col in sc_data.columns and sc_data[color_col].notna().any()) else None
+        # One row per player: take max value across all years for each stat col
+        sc_wide = (sc_ev.groupby(["player", "team", "league"])
+                        .apply(lambda g: g.groupby("col")["value"].max())
+                        .reset_index())
 
-        if sc_data.empty:
-            st.info(f"No players found with both {x_stat_name} and {y_stat_name} data.")
+        # Pivot col -> separate columns
+        sc_wide = sc_wide.pivot_table(
+            index=["player","team","league"],
+            columns="col",
+            values="value",
+            aggfunc="max",
+        ).reset_index()
+        sc_wide.columns.name = None
+        sc_wide = sc_wide.rename(columns={"player": "player_name"})
+
+        # Only keep rows with both axes populated
+        if stat_x not in sc_wide.columns or stat_y not in sc_wide.columns:
+            st.info(f"Not enough data for {x_stat_name} vs {y_stat_name} in selected range.")
         else:
-            fig3 = px.scatter(
-                sc_data, x=stat_x, y=stat_y,
-                color=color_col,
-                hover_data=[c for c in ["player_name","team","league"] if c in sc_data.columns],
-                color_discrete_sequence=COLORS,
-                labels={stat_x: x_stat_name, stat_y: y_stat_name},
-                title=f"{y_stat_name} vs {x_stat_name}",
-            )
-            fig3.update_traces(marker=dict(size=9, opacity=0.8,
-                                           line=dict(width=0.5, color="#0b0f1a")))
-            fig3.update_layout(**PL, height=340)
-            st.plotly_chart(fig3, use_container_width=True)
+            sc_plot = sc_wide.dropna(subset=[stat_x, stat_y])
+            color_col = "league" if sel_league == "Both" else "team"
+            color_col = color_col if (color_col in sc_plot.columns and sc_plot[color_col].notna().any()) else None
+
+            if sc_plot.empty:
+                st.info(f"No players with both {x_stat_name} and {y_stat_name} data.")
+            else:
+                fig3 = px.scatter(
+                    sc_plot, x=stat_x, y=stat_y,
+                    color=color_col,
+                    hover_data=[c for c in ["player_name","team","league"] if c in sc_plot.columns],
+                    color_discrete_sequence=COLORS,
+                    labels={stat_x: x_stat_name, stat_y: y_stat_name},
+                    title=f"{y_stat_name} vs {x_stat_name}  ({len(sc_plot)} players)",
+                )
+                fig3.update_traces(marker=dict(size=9, opacity=0.8,
+                                               line=dict(width=0.5, color="#0b0f1a")))
+                fig3.update_layout(**PL, height=340)
+                st.plotly_chart(fig3, use_container_width=True)
 
 with c4:
     if "team" in filtered_events.columns and not filtered_events.empty:
@@ -628,6 +643,7 @@ with c4:
 # -----------------------------------------------------------------------------
 
 st.markdown('<div class="sec-head"><span class="dot"></span>Stats by Decade</div>', unsafe_allow_html=True)
+st.markdown('<p class="chart-desc">Average home run totals (bars) and batting averages (line) among league leaders, grouped by decade. Shows how offensive production has shifted over time.</p>', unsafe_allow_html=True)
 
 decade_stats = (
     filtered.groupby("decade")[["home_runs","batting_avg"]]
@@ -669,6 +685,7 @@ else:
 # -----------------------------------------------------------------------------
 
 st.markdown('<div class="sec-head"><span class="dot"></span>Stat Leaders</div>', unsafe_allow_html=True)
+st.markdown('<p class="chart-desc">Every league leader entry from the scraped events table. Use the <b>Stat Category</b> filter in the sidebar to narrow to one stat. Use <b>Season Range</b> and <b>League</b> to further refine.</p>', unsafe_allow_html=True)
 
 if filtered_events.empty:
     st.info("No stat leader data for selected filters.")
