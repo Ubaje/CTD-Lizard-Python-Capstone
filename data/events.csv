@@ -1,0 +1,961 @@
+year,league,statistic,player,team,value
+2000,AL,Base on Balls,Jason Giambi,Oakland,137.0
+2000,AL,Batting Average,Nomar Garciaparra,Boston,0.372
+2000,AL,Complete Games,David Wells,Toronto,9.0
+2000,AL,Doubles,Carlos Delgado,Toronto,57.0
+2000,AL,ERA,Pedro Martinez,Boston,1.74
+2000,AL,Games,Kelly Wunsch,Chicago,83.0
+2000,AL,Hits,Darin Erstad,Anaheim,240.0
+2000,AL,Home Runs,Troy Glaus,Anaheim,47.0
+2000,AL,On Base Percentage,Jason Giambi,Oakland,0.476
+2000,AL,RBI,Edgar Martinez,Seattle,145.0
+2000,AL,Runs,Johnny Damon,Kansas City,136.0
+2000,AL,Saves,Todd Jones,Detroit,42.0
+2000,AL,Shutouts,Pedro Martinez,Boston,4.0
+2000,AL,Slugging Average,Manny Ramirez,Cleveland,0.697
+2000,AL,Stolen Bases,Johnny Damon,Kansas City,46.0
+2000,AL,Strikeouts,Pedro Martinez,Boston,284.0
+2000,AL,Total Bases,Carlos Delgado,Toronto,378.0
+2000,AL,Triples,Cristian Guzman,Minnesota,20.0
+2000,AL,Winning Percentage,Tim Hudson,Oakland,0.769
+2000,AL,Wins,Tim Hudson,Oakland,20.0
+2000,NL,Base on Balls,Barry Bonds,San Francisco,117.0
+2000,NL,Batting Average,Todd Helton,Colorado,0.372
+2000,NL,Complete Games,Randy Johnson,Arizona,8.0
+2000,NL,Doubles,Todd Helton,Colorado,59.0
+2000,NL,ERA,Kevin Brown,Los Angeles,2.58
+2000,NL,Games,Steve Kline,St. Louis,83.0
+2000,NL,Hits,Todd Helton,Colorado,216.0
+2000,NL,Home Runs,Sammy Sosa,Chicago,50.0
+2000,NL,On Base Percentage,Todd Helton,Colorado,0.463
+2000,NL,RBI,Todd Helton,Colorado,147.0
+2000,NL,Runs,Jeff Bagwell,Houston,152.0
+2000,NL,Saves,Antonio Alfonseca,Florida,45.0
+2000,NL,Shutouts,Greg Maddux,Atlanta,3.0
+2000,NL,Slugging Average,Todd Helton,Colorado,0.698
+2000,NL,Stolen Bases,Luis Castillo,Florida,62.0
+2000,NL,Strikeouts,Randy Johnson,Arizona,347.0
+2000,NL,Total Bases,Todd Helton,Colorado,405.0
+2000,NL,Triples,Tony Womack,Arizona,14.0
+2000,NL,Winning Percentage,Randy Johnson,Arizona,0.731
+2000,NL,Wins,Tom Glavine,Atlanta,21.0
+2001,AL,Base on Balls,Jason Giambi,Oakland,129.0
+2001,AL,Batting Average,Ichiro Suzuki,Seattle,0.35
+2001,AL,Complete Games,Steve Sparks,Detroit,8.0
+2001,AL,Doubles,Jason Giambi,Oakland,47.0
+2001,AL,ERA,Freddy Garcia,Seattle,3.05
+2001,AL,Games,Paul Quantrill,Toronto,80.0
+2001,AL,Hits,Ichiro Suzuki,Seattle,242.0
+2001,AL,Home Runs,Alex Rodriguez,Texas,52.0
+2001,AL,On Base Percentage,Jason Giambi,Oakland,0.477
+2001,AL,RBI,Bret Boone,Seattle,141.0
+2001,AL,Runs,Alex Rodriguez,Texas,133.0
+2001,AL,Saves,Mariano Rivera,New York,50.0
+2001,AL,Shutouts,Mark Mulder,Oakland,4.0
+2001,AL,Slugging Average,Jason Giambi,Oakland,0.66
+2001,AL,Stolen Bases,Ichiro Suzuki,Seattle,56.0
+2001,AL,Strikeouts,Hideo Nomo,Boston,220.0
+2001,AL,Total Bases,Alex Rodriguez,Texas,393.0
+2001,AL,Triples,Cristian Guzman,Minnesota,14.0
+2001,AL,Winning Percentage,Roger Clemens,New York,0.87
+2001,AL,Wins,Mark Mulder,Oakland,21.0
+2001,NL,Base on Balls,Barry Bonds,San Francisco,177.0
+2001,NL,Batting Average,Larry Walker,Colorado,0.35
+2001,NL,Complete Games,Curt Schilling,Arizona,6.0
+2001,NL,Doubles,Lance Berkman,Houston,55.0
+2001,NL,ERA,Randy Johnson,Arizona,2.49
+2001,NL,Games,Steve Kline,St. Louis,89.0
+2001,NL,Hits,Rich Aurilia,San Francisco,206.0
+2001,NL,Home Runs,Barry Bonds,San Francisco,73.0
+2001,NL,On Base Percentage,Barry Bonds,San Francisco,0.515
+2001,NL,RBI,Sammy Sosa,Chicago,160.0
+2001,NL,Runs,Sammy Sosa,Chicago,146.0
+2001,NL,Saves,Robb Nen,San Francisco,45.0
+2001,NL,Shutouts,Greg Maddux,Atlanta,3.0
+2001,NL,Slugging Average,Barry Bonds,San Francisco,0.863
+2001,NL,Stolen Bases,Juan Pierre,Colorado,46.0
+2001,NL,Strikeouts,Randy Johnson,Arizona,372.0
+2001,NL,Total Bases,Sammy Sosa,Chicago,425.0
+2001,NL,Triples,Jimmy Rollins,Philadelphia,12.0
+2001,NL,Winning Percentage,Roy Oswalt,Houston,0.824
+2001,NL,Wins,Curt Schilling,Arizona,22.0
+2002,AL,Base on Balls,Jim Thome,Cleveland,122.0
+2002,AL,Batting Average,Manny Ramirez,Boston,0.349
+2002,AL,Complete Games,Paul Byrd,Kansas City,7.0
+2002,AL,Doubles,Garret Anderson,Anaheim,56.0
+2002,AL,ERA,Pedro Martinez,Boston,2.26
+2002,AL,Games,Billy Koch,Oakland,84.0
+2002,AL,Hits,Alfonso Soriano,New York,209.0
+2002,AL,Home Runs,Alex Rodriguez,Texas,57.0
+2002,AL,On Base Percentage,Manny Ramirez,Boston,0.45
+2002,AL,RBI,Alex Rodriguez,Texas,142.0
+2002,AL,Runs,Alfonso Soriano,New York,128.0
+2002,AL,Saves,Eddie Guardado,Minnesota,45.0
+2002,AL,Shutouts,Jeff Weaver,New York,3.0
+2002,AL,Slugging Average,Jim Thome,Cleveland,0.677
+2002,AL,Stolen Bases,Alfonso Soriano,New York,41.0
+2002,AL,Strikeouts,Pedro Martinez,Boston,239.0
+2002,AL,Total Bases,Alex Rodriguez,Texas,389.0
+2002,AL,Triples,Johnny Damon,Boston,11.0
+2002,AL,Winning Percentage,Pedro Martinez,Boston,0.833
+2002,AL,Wins,Barry Zito,Oakland,23.0
+2002,NL,Base on Balls,Barry Bonds,San Francisco,198.0
+2002,NL,Batting Average,Barry Bonds,San Francisco,0.37
+2002,NL,Complete Games,Randy Johnson,Arizona,8.0
+2002,NL,Doubles,Bobby Abreu,Philadelphia,50.0
+2002,NL,ERA,Randy Johnson,Arizona,2.32
+2002,NL,Games,Paul Quantrill,Los Angeles,86.0
+2002,NL,Hits,Vladimir Guerrero,Montreal,206.0
+2002,NL,Home Runs,Sammy Sosa,Chicago,49.0
+2002,NL,On Base Percentage,Barry Bonds,San Francisco,0.582
+2002,NL,RBI,Lance Berkman,Houston,128.0
+2002,NL,Runs,Sammy Sosa,Chicago,122.0
+2002,NL,Saves,John Smoltz,Atlanta,55.0
+2002,NL,Shutouts,A.J. Burnett,Florida,5.0
+2002,NL,Slugging Average,Barry Bonds,San Francisco,0.799
+2002,NL,Stolen Bases,Luis Castillo,Florida,48.0
+2002,NL,Strikeouts,Randy Johnson,Arizona,334.0
+2002,NL,Total Bases,Vladimir Guerrero,Montreal,364.0
+2002,NL,Triples,Jimmy Rollins,Philadelphia,10.0
+2002,NL,Winning Percentage,Randy Johnson,Arizona,0.828
+2002,NL,Wins,Randy Johnson,Arizona,24.0
+2003,AL,Base on Balls,Jason Giambi,New York,129.0
+2003,AL,Batting Average,Bill Mueller,Boston,0.326
+2003,AL,Complete Games,Bartolo Colon,Chicago,9.0
+2003,AL,Doubles,Garret Anderson,Anaheim,49.0
+2003,AL,ERA,Pedro Martinez,Boston,2.22
+2003,AL,Games,Trever Miller,Toronto,79.0
+2003,AL,Hits,Vernon Wells,Toronto,215.0
+2003,AL,Home Runs,Alex Rodriguez,Texas,47.0
+2003,AL,On Base Percentage,Manny Ramirez,Boston,0.427
+2003,AL,RBI,Carlos Delgado,Toronto,145.0
+2003,AL,Runs,Alex Rodriguez,Texas,124.0
+2003,AL,Saves,Keith Foulke,Oakland,43.0
+2003,AL,Shutouts,Roy Halladay,Toronto,2.0
+2003,AL,Slugging Average,Alex Rodriguez,Texas,0.6
+2003,AL,Stolen Bases,Carl Crawford,Tampa Bay,55.0
+2003,AL,Strikeouts,Esteban Loaiza,Chicago,207.0
+2003,AL,Total Bases,Vernon Wells,Toronto,373.0
+2003,AL,Triples,Cristian Guzman,Minnesota,14.0
+2003,AL,Winning Percentage,Roy Halladay,Toronto,0.759
+2003,AL,Wins,Roy Halladay,Toronto,22.0
+2003,NL,Base on Balls,Barry Bonds,San Francisco,148.0
+2003,NL,Batting Average,Albert Pujols,St. Louis,0.359
+2003,NL,Complete Games,Livan Hernandez,Montreal,8.0
+2003,NL,Doubles,Albert Pujols,St. Louis,51.0
+2003,NL,ERA,Jason Schmidt,San Francisco,2.34
+2003,NL,Games,Paul Quantrill,Los Angeles,89.0
+2003,NL,Hits,Albert Pujols,St. Louis,212.0
+2003,NL,Home Runs,Jim Thome,Philadelphia,47.0
+2003,NL,On Base Percentage,Barry Bonds,San Francisco,0.529
+2003,NL,RBI,Preston Wilson,Colorado,141.0
+2003,NL,Runs,Albert Pujols,St. Louis,137.0
+2003,NL,Saves,Eric Gagne,Los Angeles,55.0
+2003,NL,Shutouts,Kevin Millwood,Philadelphia,3.0
+2003,NL,Slugging Average,Barry Bonds,San Francisco,0.749
+2003,NL,Stolen Bases,Juan Pierre,Florida,45.0
+2003,NL,Strikeouts,Kerry Wood,Chicago,266.0
+2003,NL,Total Bases,Albert Pujols,St. Louis,394.0
+2003,NL,Triples,Steve Finley,Arizona,10.0
+2003,NL,Winning Percentage,Jason Schmidt,San Francisco,0.773
+2003,NL,Wins,Russ Ortiz,Atlanta,21.0
+2004,AL,Base on Balls,Eric Chavez,Oakland,95.0
+2004,AL,Batting Average,Ichiro Suzuki,Seattle,0.372
+2004,AL,Complete Games,Mark Mulder,Oakland,5.0
+2004,AL,Doubles,Brian Roberts,Baltimore,50.0
+2004,AL,ERA,Johan Santana,Minnesota,2.61
+2004,AL,Games,Paul Quantrill,New York,86.0
+2004,AL,Hits,Ichiro Suzuki,Seattle,262.0
+2004,AL,Home Runs,Manny Ramirez,Boston,43.0
+2004,AL,On Base Percentage,Melvin Mora,Baltimore,0.419
+2004,AL,RBI,Miguel Tejada,Baltimore,150.0
+2004,AL,Runs,Vladimir Guerrero,Anaheim,124.0
+2004,AL,Saves,Mariano Rivera,New York,53.0
+2004,AL,Shutouts,Jeremy Bonderman,Detroit,2.0
+2004,AL,Slugging Average,Manny Ramirez,Boston,0.613
+2004,AL,Stolen Bases,Carl Crawford,Tampa Bay,59.0
+2004,AL,Strikeouts,Johan Santana,Minnesota,265.0
+2004,AL,Total Bases,Vladimir Guerrero,Anaheim,366.0
+2004,AL,Triples,Carl Crawford,Tampa Bay,19.0
+2004,AL,Winning Percentage,Curt Schilling,Boston,0.778
+2004,AL,Wins,Curt Schilling,Boston,21.0
+2004,NL,Base on Balls,Barry Bonds,San Francisco,232.0
+2004,NL,Batting Average,Barry Bonds,San Francisco,0.362
+2004,NL,Complete Games,Livan Hernandez,Montreal,9.0
+2004,NL,Doubles,Lyle Overbay,Milwaukee,53.0
+2004,NL,ERA,Jake Peavy,San Diego,2.27
+2004,NL,Games,Jim Brower,San Francisco,89.0
+2004,NL,Hits,Juan Pierre,Florida,221.0
+2004,NL,Home Runs,Adrian Beltre,Los Angeles,48.0
+2004,NL,On Base Percentage,Barry Bonds,San Francisco,0.609
+2004,NL,RBI,Vinny Castilla,Colorado,131.0
+2004,NL,Runs,Albert Pujols,St. Louis,133.0
+2004,NL,Saves,Armando Benitez,Florida,47.0
+2004,NL,Shutouts,Cory Lidle,Philadelphia,3.0
+2004,NL,Slugging Average,Barry Bonds,San Francisco,0.812
+2004,NL,Stolen Bases,Scott Podsednik,Milwaukee,70.0
+2004,NL,Strikeouts,Randy Johnson,Arizona,290.0
+2004,NL,Total Bases,Albert Pujols,St. Louis,389.0
+2004,NL,Triples,Juan Pierre,Florida,12.0
+2004,NL,Winning Percentage,Roger Clemens,Houston,0.818
+2004,NL,Wins,Roy Oswalt,Houston,20.0
+2005,AL,Base on Balls,Jason Giambi,New York,108.0
+2005,AL,Batting Average,Michael Young,Texas,0.331
+2005,AL,Complete Games,Roy Halladay,Toronto,5.0
+2005,AL,Doubles,Miguel Tejada,Baltimore,50.0
+2005,AL,ERA,Kevin Millwood,Cleveland,2.86
+2005,AL,Games,Mike Timlin,Boston,81.0
+2005,AL,Hits,Michael Young,Texas,221.0
+2005,AL,Home Runs,Alex Rodriguez,New York,48.0
+2005,AL,On Base Percentage,Jason Giambi,New York,0.44
+2005,AL,RBI,David Ortiz,Boston,148.0
+2005,AL,Runs,Alex Rodriguez,New York,124.0
+2005,AL,Saves,Francisco Rodriguez,Los Angeles,45.0
+2005,AL,Shutouts,Jon Garland,Chicago,3.0
+2005,AL,Slugging Average,Alex Rodriguez,New York,0.61
+2005,AL,Stolen Bases,Chone Figgins,Los Angeles,62.0
+2005,AL,Strikeouts,Johan Santana,Minnesota,238.0
+2005,AL,Total Bases,Mark Teixeira,Texas,370.0
+2005,AL,Triples,Carl Crawford,Tampa Bay,15.0
+2005,AL,Winning Percentage,Cliff Lee,Cleveland,0.783
+2005,AL,Wins,Bartolo Colon,Los Angeles,21.0
+2005,NL,Base on Balls,Brian Giles,San Diego,119.0
+2005,NL,Batting Average,Derrek Lee,Chicago,0.335
+2005,NL,Complete Games,Chris Carpenter,St. Louis,7.0
+2005,NL,Doubles,Derrek Lee,Chicago,50.0
+2005,NL,ERA,Roger Clemens,Houston,1.87
+2005,NL,Games,Scott Eyre,San Francisco,86.0
+2005,NL,Hits,Derrek Lee,Chicago,199.0
+2005,NL,Home Runs,Andruw Jones,Atlanta,51.0
+2005,NL,On Base Percentage,Todd Helton,Colorado,0.445
+2005,NL,RBI,Andruw Jones,Atlanta,128.0
+2005,NL,Runs,Albert Pujols,St. Louis,129.0
+2005,NL,Saves,Chad Cordero,Washington,47.0
+2005,NL,Shutouts,Dontrelle Willis,Florida,5.0
+2005,NL,Slugging Average,Derrek Lee,Chicago,0.662
+2005,NL,Stolen Bases,Jose Reyes,New York,60.0
+2005,NL,Strikeouts,Jake Peavy,San Diego,216.0
+2005,NL,Total Bases,Derrek Lee,Chicago,393.0
+2005,NL,Triples,Jose Reyes,New York,17.0
+2005,NL,Winning Percentage,Chris Carpenter,St. Louis,0.808
+2005,NL,Wins,Dontrelle Willis,Florida,22.0
+2006,AL,Base on Balls,David Ortiz,Boston,119.0
+2006,AL,Batting Average,Joe Mauer,Minnesota,0.347
+2006,AL,Complete Games,CC Sabathia,Cleveland,6.0
+2006,AL,Doubles,Grady Sizemore,Cleveland,53.0
+2006,AL,ERA,Johan Santana,Minnesota,2.77
+2006,AL,Games,Scott Proctor,New York,83.0
+2006,AL,Hits,Ichiro Suzuki,Seattle,224.0
+2006,AL,Home Runs,David Ortiz,Boston,54.0
+2006,AL,On Base Percentage,Manny Ramirez,Boston,0.439
+2006,AL,RBI,David Ortiz,Boston,137.0
+2006,AL,Runs,Grady Sizemore,Cleveland,134.0
+2006,AL,Saves,Francisco Rodriguez,Los Angeles,47.0
+2006,AL,Shutouts,John Lackey,Los Angeles,2.0
+2006,AL,Slugging Average,Travis Hafner,Cleveland,0.659
+2006,AL,Stolen Bases,Carl Crawford,Tampa Bay,58.0
+2006,AL,Strikeouts,Johan Santana,Minnesota,245.0
+2006,AL,Total Bases,David Ortiz,Boston,355.0
+2006,AL,Triples,Carl Crawford,Tampa Bay,16.0
+2006,AL,Winning Percentage,Roy Halladay,Toronto,0.762
+2006,AL,Wins,Johan Santana,Minnesota,19.0
+2006,NL,Base on Balls,Barry Bonds,San Francisco,115.0
+2006,NL,Batting Average,Freddy Sanchez,Pittsburgh,0.344
+2006,NL,Complete Games,Aaron Harang,Cincinnati,6.0
+2006,NL,Doubles,Freddy Sanchez,Pittsburgh,53.0
+2006,NL,ERA,Roy Oswalt,Houston,2.98
+2006,NL,Games,Salomon Torres,Pittsburgh,94.0
+2006,NL,Hits,Juan Pierre,Chicago,204.0
+2006,NL,Home Runs,Ryan Howard,Philadelphia,58.0
+2006,NL,On Base Percentage,Barry Bonds *,San Francisco,0.454
+2006,NL,RBI,Ryan Howard,Philadelphia,149.0
+2006,NL,Runs,Chase Utley,Philadelphia,131.0
+2006,NL,Saves,Trevor Hoffman,San Diego,46.0
+2006,NL,Shutouts,Chris Carpenter,St. Louis,3.0
+2006,NL,Slugging Average,Albert Pujols,St. Louis,0.671
+2006,NL,Stolen Bases,Jose Reyes,New York,64.0
+2006,NL,Strikeouts,Aaron Harang,Cincinnati,216.0
+2006,NL,Total Bases,Ryan Howard,Philadelphia,383.0
+2006,NL,Triples,Jose Reyes,New York,17.0
+2006,NL,Winning Percentage,Carlos Zambrano,Chicago,0.696
+2006,NL,Wins,Aaron Harang,Cincinnati,16.0
+2007,AL,Base on Balls,David Ortiz,Boston,111.0
+2007,AL,Batting Average,Magglio Ordonez,Detroit,0.363
+2007,AL,Complete Games,Roy Halladay,Toronto,7.0
+2007,AL,Doubles,Magglio Ordonez,Detroit,54.0
+2007,AL,ERA,John Lackey,Los Angeles,3.01
+2007,AL,Games,Jamie Walker,Baltimore,81.0
+2007,AL,Hits,Ichiro Suzuki,Seattle,238.0
+2007,AL,Home Runs,Alex Rodriguez,New York,54.0
+2007,AL,On Base Percentage,David Ortiz,Boston,0.445
+2007,AL,RBI,Alex Rodriguez,New York,156.0
+2007,AL,Runs,Alex Rodriguez,New York,143.0
+2007,AL,Saves,Joe Borowski,Cleveland,45.0
+2007,AL,Shutouts,Paul Byrd,Cleveland,2.0
+2007,AL,Slugging Average,Alex Rodriguez,New York,0.645
+2007,AL,Stolen Bases,Carl Crawford,Tampa Bay,50.0
+2007,AL,Strikeouts,Scott Kazmir,Tampa Bay,239.0
+2007,AL,Total Bases,Alex Rodriguez,New York,376.0
+2007,AL,Triples,Curtis Granderson,Detroit,23.0
+2007,AL,Winning Percentage,Justin Verlander,Detroit,0.762
+2007,AL,Wins,Josh Beckett,Boston,20.0
+2007,NL,Base on Balls,Barry Bonds,San Francisco,132.0
+2007,NL,Batting Average,Matt Holliday,Colorado,0.34
+2007,NL,Complete Games,Brandon Webb,Arizona,4.0
+2007,NL,Doubles,Matt Holliday,Colorado,50.0
+2007,NL,ERA,Jake Peavy,San Diego,2.54
+2007,NL,Games,Jon Rauch,Washington,88.0
+2007,NL,Hits,Matt Holliday,Colorado,216.0
+2007,NL,Home Runs,Prince Fielder,Milwaukee,50.0
+2007,NL,On Base Percentage,Todd Helton,Colorado,0.434
+2007,NL,RBI,Matt Holliday,Colorado,137.0
+2007,NL,Runs,Jimmy Rollins,Philadelphia,139.0
+2007,NL,Saves,Jose Valverde,Arizona,47.0
+2007,NL,Shutouts,Brandon Webb,Arizona,3.0
+2007,NL,Slugging Average,Prince Fielder,Milwaukee,0.618
+2007,NL,Stolen Bases,Jose Reyes,New York,78.0
+2007,NL,Strikeouts,Jake Peavy,San Diego,240.0
+2007,NL,Total Bases,Matt Holliday,Colorado,386.0
+2007,NL,Triples,Jimmy Rollins,Philadelphia,20.0
+2007,NL,Winning Percentage,Brad Penny,Los Angeles,0.8
+2007,NL,Wins,Jake Peavy,San Diego,19.0
+2008,AL,Base on Balls,Jack Cust,Oakland,111.0
+2008,AL,Batting Average,Joe Mauer,Minnesota,0.33
+2008,AL,Complete Games,Roy Halladay,Toronto,9.0
+2008,AL,Doubles,Dustin Pedroia,Boston,54.0
+2008,AL,ERA,Cliff Lee,Cleveland,2.54
+2008,AL,Games,Matt Guerrier,Minnesota,76.0
+2008,AL,Hits,Dustin Pedroia,Boston,213.0
+2008,AL,Home Runs,Miguel Cabrera,Detroit,37.0
+2008,AL,On Base Percentage,Milton Bradley,Texas,0.436
+2008,AL,RBI,Josh Hamilton,Texas,130.0
+2008,AL,Runs,Dustin Pedroia,Boston,118.0
+2008,AL,Saves,Francisco Rodriguez,Los Angeles,62.0
+2008,AL,Shutouts,Matt Garza,Tampa Bay,2.0
+2008,AL,Slugging Average,Alex Rodriguez,New York,0.573
+2008,AL,Stolen Bases,Jacoby Ellsbury,Boston,50.0
+2008,AL,Strikeouts,A.J. Burnett,Toronto,231.0
+2008,AL,Total Bases,Josh Hamilton,Texas,331.0
+2008,AL,Triples,Curtis Granderson,Detroit,13.0
+2008,AL,Winning Percentage,Cliff Lee,Cleveland,0.88
+2008,AL,Wins,Cliff Lee,Cleveland,22.0
+2008,NL,Base on Balls,Adam Dunn,Arizona,122.0
+2008,NL,Batting Average,Chipper Jones,Atlanta,0.364
+2008,NL,Complete Games,CC Sabathia,Milwaukee,7.0
+2008,NL,Doubles,Lance Berkman,Houston,46.0
+2008,NL,ERA,Johan Santana,New York,2.53
+2008,NL,Games,Pedro Feliciano,New York,86.0
+2008,NL,Hits,Jose Reyes,New York,204.0
+2008,NL,Home Runs,Ryan Howard,Philadelphia,48.0
+2008,NL,On Base Percentage,Chipper Jones,Atlanta,0.47
+2008,NL,RBI,Ryan Howard,Philadelphia,146.0
+2008,NL,Runs,Hanley Ramirez,Florida,125.0
+2008,NL,Saves,Jose Valverde,Houston,44.0
+2008,NL,Shutouts,CC Sabathia,Milwaukee,3.0
+2008,NL,Slugging Average,Albert Pujols,St. Louis,0.653
+2008,NL,Stolen Bases,Willy Taveras,Colorado,68.0
+2008,NL,Strikeouts,Tim Lincecum,San Francisco,265.0
+2008,NL,Total Bases,Albert Pujols,St. Louis,342.0
+2008,NL,Triples,Jose Reyes,New York,19.0
+2008,NL,Winning Percentage,Tim Lincecum,San Francisco,0.783
+2008,NL,Wins,Brandon Webb,Arizona,22.0
+2009,AL,Base on Balls,Chone Figgins,Los Angeles,101.0
+2009,AL,Batting Average,Joe Mauer,Minnesota,0.365
+2009,AL,Complete Games,Roy Halladay,Toronto,9.0
+2009,AL,Doubles,Brian Roberts,Baltimore,56.0
+2009,AL,ERA,Zack Greinke,Kansas City,2.16
+2009,AL,Games,Matt Guerrier,Minnesota,79.0
+2009,AL,Hits,Ichiro Suzuki,Seattle,225.0
+2009,AL,Home Runs,Carlos Pena,Tampa Bay,39.0
+2009,AL,On Base Percentage,Joe Mauer,Minnesota,0.444
+2009,AL,RBI,Mark Teixeira,New York,122.0
+2009,AL,Runs,DustinPedroia,Boston,115.0
+2009,AL,Saves,Brian Fuentes,Los Angeles,48.0
+2009,AL,Shutouts,Roy Halladay,Toronto,4.0
+2009,AL,Slugging Average,Joe Mauer,Minnesota,0.587
+2009,AL,Stolen Bases,Jacoby Ellsbury,Boston,70.0
+2009,AL,Strikeouts,Justin Verlander,Detroit,269.0
+2009,AL,Total Bases,Mark Teixeira,New York,344.0
+2009,AL,Triples,Jacoby Ellsbury,Boston,10.0
+2009,AL,Winning Percentage,Felix Hernandez,Seattle,0.792
+2009,AL,Wins,Felix Hernandez,Seattle,19.0
+2009,NL,Base on Balls,Adrian Gonzalez,San Diego,119.0
+2009,NL,Batting Average,Hanley Ramirez,Florida,0.342
+2009,NL,Complete Games,Matt Cain,San Francisco,4.0
+2009,NL,Doubles,Miguel Tejada,Houston,46.0
+2009,NL,ERA,Chris Carpenter,St. Louis,2.24
+2009,NL,Games,Pedro Feliciano,New York,88.0
+2009,NL,Hits,Ryan Braun,Milwaukee,203.0
+2009,NL,Home Runs,Albert Pujols,St. Louis,47.0
+2009,NL,On Base Percentage,Albert Pujols,St. Louis,0.443
+2009,NL,RBI,Prince Fielder,Milwaukee,141.0
+2009,NL,Runs,Albert Pujols,St. Louis,124.0
+2009,NL,Saves,Heath Bell,San Diego,42.0
+2009,NL,Shutouts,Bronson Arroyo,Cincinnati,2.0
+2009,NL,Slugging Average,Albert Pujols,St. Louis,0.658
+2009,NL,Stolen Bases,Michael Bourn,Houston,61.0
+2009,NL,Strikeouts,Tim Lincecum,San Francisco,261.0
+2009,NL,Total Bases,Albert Pujols,St. Louis,374.0
+2009,NL,Triples,Shane Victorino,Philadelphia,13.0
+2009,NL,Winning Percentage,Chris Carpenter,St. Louis,0.81
+2009,NL,Wins,Adam Wainwright,St. Louis,19.0
+2010,AL,Base on Balls,Daric Barton,Oakland,110.0
+2010,AL,Batting Average,Josh Hamilton,Texas,0.359
+2010,AL,Complete Games,Cliff Lee,Seattle / Texas,7.0
+2010,AL,Doubles,Adrian Beltre,Boston,49.0
+2010,AL,ERA,Felix Hernandez,Seattle,2.27
+2010,AL,Games,Randy Choate,Tampa Bay,85.0
+2010,AL,Hits,Ichiro Suzuki,Seattle,214.0
+2010,AL,Home Runs,Jose Bautista,Toronto,54.0
+2010,AL,On Base Percentage,Miguel Cabrera,Detroit,0.42
+2010,AL,RBI,Miguel Cabrera,Detroit,126.0
+2010,AL,Runs,Mark Teixeira,New York,113.0
+2010,AL,Saves,Rafael Soriano,Tampa Bay,45.0
+2010,AL,Shutouts,Dallas Braden,Oakland,2.0
+2010,AL,Slugging Average,Josh Hamilton,Texas,0.633
+2010,AL,Stolen Bases,Juan Pierre,Chicago,68.0
+2010,AL,Strikeouts,Jered Weaver,Los Angeles,233.0
+2010,AL,Total Bases,Jose Bautista,Toronto,351.0
+2010,AL,Triples,Carl Crawford,Tampa Bay,13.0
+2010,AL,Winning Percentage,Tommy Hunter,Texas,0.765
+2010,AL,Wins,C.C. Sabathia,New York,21.0
+2010,NL,Base on Balls,Prince Fielder,Milwaukee,114.0
+2010,NL,Batting Average,Carlos Gonzalez,Colorado,0.336
+2010,NL,Complete Games,Roy Hallady,Philadelphia,9.0
+2010,NL,Doubles,Jayson Werth,Philadelphia,46.0
+2010,NL,ERA,Josh Johnson,Florida,2.3
+2010,NL,Games,Pedro Feliciano,New York,92.0
+2010,NL,Hits,Carlos Gonzalez,Colorado,197.0
+2010,NL,Home Runs,Albert Pujols,St. Louis,42.0
+2010,NL,On Base Percentage,Joey Votto,Cincinnati,0.424
+2010,NL,RBI,Albert Pujols,St. Louis,118.0
+2010,NL,Runs,Albert Pujols,St. Louis,115.0
+2010,NL,Saves,Brian Wilson,San Francisco,48.0
+2010,NL,Shutouts,Roy Hallady,Philadelphia,4.0
+2010,NL,Slugging Average,Joey Votto,Cincinnati,0.6
+2010,NL,Stolen Bases,Michael Bourn,Houston,52.0
+2010,NL,Strikeouts,Tim Lincecum,San Francisco,231.0
+2010,NL,Total Bases,Carlos Gonzalez,Colorado,351.0
+2010,NL,Triples,Dexter Fowler,Colorado,14.0
+2010,NL,Winning Percentage,Ubaldo Jimenez,Colorado,0.704
+2010,NL,Wins,Roy Hallady,Philadelphia,21.0
+2011,AL,Base on Balls,Jose Bautista,Toronto,132.0
+2011,AL,Batting Average,Miguel Cabrera,Detroit,0.344
+2011,AL,Complete Games,James Shields,Tampa Bay,11.0
+2011,AL,Doubles,Miguel Cabrera,Detroit,48.0
+2011,AL,ERA,Justin Verlander,Detroit,2.4
+2011,AL,Games,Jose Valverde,Detroit,75.0
+2011,AL,Hits,Adrian Gonzalez,Boston,213.0
+2011,AL,Home Runs,Jose Bautista,Toronto,43.0
+2011,AL,On Base Percentage,Miguel Cabrera,Detroit,0.448
+2011,AL,RBI,Curtis Granderson,New York,119.0
+2011,AL,Runs,Curtis Granderson,New York,136.0
+2011,AL,Saves,Jose Valverde,Detroit,49.0
+2011,AL,Shutouts,Derek Holland,Texas,4.0
+2011,AL,Slugging Average,Jose Bautista,Toronto,0.608
+2011,AL,Stolen Bases,Coco Crisp,Oakland,49.0
+2011,AL,Strikeouts,Justin Verlander,Detroit,250.0
+2011,AL,Total Bases,Jacoby Ellsbury,Boston,364.0
+2011,AL,Triples,Peter Bourjos,Los Angeles,11.0
+2011,AL,Winning Percentage,Justin Verlander,Detroit,0.828
+2011,AL,Wins,Justin Verlander,Detroit,24.0
+2011,NL,Base on Balls,Joey Votto,Cincinnati,110.0
+2011,NL,Batting Average,Jose Reyes,New York,0.337
+2011,NL,Complete Games,Roy Halladay,Philadelphia,8.0
+2011,NL,Doubles,Joey Votto,Cincinnati,40.0
+2011,NL,ERA,Clayton Kershaw,Los Angeles,2.28
+2011,NL,Games,Jonny Venters,Atlanta,85.0
+2011,NL,Hits,Starlin Castro,Chicago,207.0
+2011,NL,Home Runs,Matt Kemp,Los Angeles,39.0
+2011,NL,On Base Percentage,Joey Votto,Cincinnati,0.416
+2011,NL,RBI,Matt Kemp,Los Angeles,126.0
+2011,NL,Runs,Matt Kemp,Los Angeles,115.0
+2011,NL,Saves,John Axford,Milwaukee,46.0
+2011,NL,Shutouts,Cliff Lee,Philadelphia,6.0
+2011,NL,Slugging Average,Ryan Braun,Milwaukee,0.597
+2011,NL,Stolen Bases,Michael Bourn,Houston / Atlanta,61.0
+2011,NL,Strikeouts,Clayton Kershaw,Los Angeles,248.0
+2011,NL,Total Bases,Matt Kemp,Los Angeles,353.0
+2011,NL,Triples,Jose Reyes,New York,16.0
+2011,NL,Winning Percentage,Ian Kennedy,Arizona,0.84
+2011,NL,Wins,Ian Kennedy,Arizona,21.0
+2012,AL,Base on Balls,Adam Dunn,Chicago,105.0
+2012,AL,Batting Average,Miguel Cabrera,Detroit,0.33
+2012,AL,Complete Games,Justin Verlander,Detroit,6.0
+2012,AL,Doubles,Alex Gordon,Kansas City,51.0
+2012,AL,ERA,David Price,Tampa Bay,2.56
+2012,AL,Games,Boone Logan,New York,80.0
+2012,AL,Hits,Derek Jeter,New York,216.0
+2012,AL,Home Runs,Miguel Cabrera,Detroit,44.0
+2012,AL,On Base Percentage,Joe Mauer,Minnesota,0.416
+2012,AL,RBI,Miguel Cabrera,Detroit,139.0
+2012,AL,Runs,Mike Trout,Los Angeles,129.0
+2012,AL,Saves,Jim Johnson,Baltimore,51.0
+2012,AL,Shutouts,Felix Hernandez,Seattle,5.0
+2012,AL,Slugging Average,Miguel Cabrera,Detroit,0.606
+2012,AL,Stolen Bases,Mike Trout,Los Angeles,49.0
+2012,AL,Strikeouts,Justin Verlander,Detroit,239.0
+2012,AL,Total Bases,Miguel Cabrera,Detroit,377.0
+2012,AL,Triples,Austin Jackson,Detroit,10.0
+2012,AL,Winning Percentage,David Price,Tampa Bay,0.8
+2012,AL,Wins,David Price,Tampa Bay,20.0
+2012,NL,Base on Balls,Dan Uggla,Atlanta,94.0
+2012,NL,Batting Average,Buster Posey *,San Francisco,0.336
+2012,NL,Complete Games,R.A. Dickey,New York,5.0
+2012,NL,Doubles,Aramis Ramirez,Milwaukee,50.0
+2012,NL,ERA,Clayton Kershaw,Los Angeles,2.53
+2012,NL,Games,Matt Belisle,Colorado,80.0
+2012,NL,Hits,Andrew McCutchen,Pittsburgh,194.0
+2012,NL,Home Runs,Ryan Braun,Milwaukee,41.0
+2012,NL,On Base Percentage,Joey Votto,Cincinnati,0.474
+2012,NL,RBI,Chase Headley,San Diego,115.0
+2012,NL,Runs,Ryan Braun,Milwaukee,108.0
+2012,NL,Saves,Craig Kimbrel,Atlanta,42.0
+2012,NL,Shutouts,R.A. Dickey,New York,3.0
+2012,NL,Slugging Average,Mike Stanton,Miami,0.608
+2012,NL,Stolen Bases,Everth Cabrera,San Diego,44.0
+2012,NL,Strikeouts,R.A. Dickey,New York,230.0
+2012,NL,Total Bases,Ryan Braun,Milwaukee,356.0
+2012,NL,Triples,Angel Pagan,San Francisco,15.0
+2012,NL,Winning Percentage,Kyle Lohse,St. Louis,0.842
+2012,NL,Wins,Gio Gonzalez,Washington,21.0
+2013,AL,Base on Balls,Mike Trout,Los Angeles,110.0
+2013,AL,Batting Average,Miguel Cabrera,Detroit,0.348
+2013,AL,Complete Games,David Price,Tampa Bay,4.0
+2013,AL,Doubles,Manny Machado,Baltimore,51.0
+2013,AL,ERA,Anibal Sanchez,Detroit,2.57
+2013,AL,Games,Joel Peralta,Tampa Bay,80.0
+2013,AL,Hits,Adrian Beltre,Texas,199.0
+2013,AL,Home Runs,Chris Davis,Baltimore,53.0
+2013,AL,On Base Percentage,Miguel Cabrera,Detroit,0.442
+2013,AL,RBI,Chris Davis,Baltimore,138.0
+2013,AL,Runs,Mike Trout,Los Angeles,109.0
+2013,AL,Saves,Jim Johnson,Baltimore,50.0
+2013,AL,Shutouts,Bartolo Colon,Oakland,3.0
+2013,AL,Slugging Average,Miguel Cabrera,Detroit,0.636
+2013,AL,Stolen Bases,Jacoby Ellsbury,Boston,52.0
+2013,AL,Strikeouts,Yu Darvish,Texas,277.0
+2013,AL,Total Bases,Chris Davis,Baltimore,370.0
+2013,AL,Triples,Brett Gardner,New York,10.0
+2013,AL,Winning Percentage,Max Scherzer,Detroit,0.875
+2013,AL,Wins,Max Scherzer,Detroit,21.0
+2013,NL,Base on Balls,Joey Votto,Cincinnati,135.0
+2013,NL,Batting Average,Michael Cuddyer,Colorado,0.331
+2013,NL,Complete Games,Adam Wainwright,St. Louis,4.0
+2013,NL,Doubles,Matt Carpenter,St. Louis,55.0
+2013,NL,ERA,Clayton Kershaw,Los Angeles,1.83
+2013,NL,Games,Brad Ziegler,Arizona,78.0
+2013,NL,Hits,Matt Carpenter,St. Louis,199.0
+2013,NL,Home Runs,Pedro Alvarez,Pittsburgh,36.0
+2013,NL,On Base Percentage,Joey Votto,Cincinnati,0.435
+2013,NL,RBI,Paul Goldschmidt,Arizona,125.0
+2013,NL,Runs,Matt Carpenter,St. Louis,126.0
+2013,NL,Saves,Craig Kimbrel,Atlanta,50.0
+2013,NL,Shutouts,Clayton Kershaw,Los Angeles,3.0
+2013,NL,Slugging Average,Paul Goldschmidt,Arizona,0.552
+2013,NL,Stolen Bases,Eric Young,Colorado / New York,46.0
+2013,NL,Strikeouts,Clayton Kershaw,Los Angeles,232.0
+2013,NL,Total Bases,Paul Goldschmidt,Arizona,332.0
+2013,NL,Triples,Denard Span,Washington,11.0
+2013,NL,Winning Percentage,Zack Greinke,Los Angeles,0.789
+2013,NL,Wins,Adam Wainwright,St. Louis,19.0
+2014,AL,Base on Balls,Carlos Santana,Cleveland,113.0
+2014,AL,Batting Average,Jose Altuve,Houston,0.341
+2014,AL,Complete Games,Dallas Keuchel,Houston,5.0
+2014,AL,Doubles,Miguel Cabrera,Detroit,52.0
+2014,AL,ERA,Felix Hernandez,Seattle,2.14
+2014,AL,Games,Bryan Shaw,Cleveland,80.0
+2014,AL,Hits,Jose Altuve,Houston,225.0
+2014,AL,Home Runs,Nelson Cruz,Baltimore,40.0
+2014,AL,On Base Percentage,Victor Martinez,Detroit,0.409
+2014,AL,RBI,Mike Trout,Los Angeles,111.0
+2014,AL,Runs,Mike Trout,Los Angeles,115.0
+2014,AL,Saves,Fernando Rodney,Seattle,48.0
+2014,AL,Shutouts,Rick Porcello,Detroit,3.0
+2014,AL,Slugging Average,Jose Abreu,Chicago,0.581
+2014,AL,Stolen Bases,Jose Altuve,Chicago,56.0
+2014,AL,Strikeouts,David Price,Tampa Bay / Detroit,271.0
+2014,AL,Total Bases,Mike Trout,Los Angeles,338.0
+2014,AL,Triples,Michael Bourn,Cleveland,10.0
+2014,AL,Winning Percentage,Max Scherzer,Detroit,0.783
+2014,AL,Wins,Corey Kluber,Texas,18.0
+2014,NL,Base on Balls,Matt Carpenter,St. Louis,95.0
+2014,NL,Batting Average,Justin Morneau,Colorado,0.319
+2014,NL,Complete Games,Clayton Kershaw,Los Angeles,6.0
+2014,NL,Doubles,Jonathan Lucroy,Milwaukee,53.0
+2014,NL,ERA,Clayton Kershaw,Los Angeles,1.77
+2014,NL,Games,Will Smith,Milwaukee,78.0
+2014,NL,Hits,Ben Revere,Philadelphia,184.0
+2014,NL,Home Runs,Giancarlo Stanton,Miami,37.0
+2014,NL,On Base Percentage,Andrew McCutchen,Pittsburgh,0.41
+2014,NL,RBI,Adrian Gonzalez,Los Angeles,116.0
+2014,NL,Runs,Anthony Rendon,Washington,111.0
+2014,NL,Saves,Craig Kimbrel,Atlanta,47.0
+2014,NL,Shutouts,Henderson Alvarez,Miami,4.0
+2014,NL,Slugging Average,Giancarlo Stanton,Miami,0.555
+2014,NL,Stolen Bases,Dee Strange-Gordon,Los Angeles,64.0
+2014,NL,Strikeouts,Johnny Cueto,Cincinnati,242.0
+2014,NL,Total Bases,Giancarlo Stanton,Miami,299.0
+2014,NL,Triples,Dee Strange-Gordon,Los Angeles,12.0
+2014,NL,Winning Percentage,Clayton Kershaw,Los Angeles,0.875
+2014,NL,Wins,Clayton Kershaw,Los Angeles,21.0
+2015,AL,Base on Balls,Jose Bautista,Toronto,110.0
+2015,AL,Batting Average,Miguel Cabrera,Detroit,0.338
+2015,AL,Complete Games,Mark Buehrle,Toronto,4.0
+2015,AL,Doubles,Michael Brantley,Cleveland,45.0
+2015,AL,ERA,David Price,Detroit,2.45
+2015,AL,Games,Kevin Jepsen,Tampa Bay,75.0
+2015,AL,Hits,Jose Altuve,Houston,200.0
+2015,AL,Home Runs,Chris Davis,Baltimore,47.0
+2015,AL,On Base Percentage,Miguel Cabrera,Detroit,0.44
+2015,AL,RBI,Josh Donaldson,Toronto,123.0
+2015,AL,Runs,Josh Donaldson,Toronto,122.0
+2015,AL,Saves,Brad Boxberger,Tampa Bay,41.0
+2015,AL,Shutouts,Sonny Gray,Oakland,2.0
+2015,AL,Slugging Average,Mike Trout,Los Angeles,0.59
+2015,AL,Stolen Bases,Jose Altuve,Houston,38.0
+2015,AL,Strikeouts,Chris Sale,Chicago,274.0
+2015,AL,Total Bases,Josh Donaldson,Toronto,352.0
+2015,AL,Triples,Eddie Rosario,Minnesota,15.0
+2015,AL,Winning Percentage,David Price,Detroit,0.783
+2015,AL,Wins,Dallas Keuchel,Houston,20.0
+2015,NL,Base on Balls,Joey Votto,Cincinnati,143.0
+2015,NL,Batting Average,Dee Gordon,Miami,0.333
+2015,NL,Complete Games,Jake Arrieta,Chicago,4.0
+2015,NL,Doubles,Matt Carpenter,St. Louis,44.0
+2015,NL,ERA,Zack Greinke,Los Angeles,1.66
+2015,NL,Games,Kevin Siegrist,St. Louis,81.0
+2015,NL,Hits,Dee Gordon,Miami,205.0
+2015,NL,Home Runs,Nolan Arenado,Colorado,42.0
+2015,NL,On Base Percentage,Bryce Harper,Washington,0.46
+2015,NL,RBI,Nolan Arenado,Colorado,130.0
+2015,NL,Runs,Bryce Harper,Washington,118.0
+2015,NL,Saves,Mark Melancon,Pittsburgh,51.0
+2015,NL,Shutouts,Jake Arrieta,Chicago,3.0
+2015,NL,Slugging Average,Bryce Harper,Washington,0.649
+2015,NL,Stolen Bases,Dee Gordon,Miami,58.0
+2015,NL,Strikeouts,Clayton Kershaw,Los Angeles,301.0
+2015,NL,Total Bases,Nolan Arenado,Colorado,354.0
+2015,NL,Triples,David Peralta,Arizona,10.0
+2015,NL,Winning Percentage,Zack Greinke,Los Angeles,0.864
+2015,NL,Wins,Jake Arrieta,Chicago,22.0
+2016,AL,Base on Balls,Mike Trout,Los Angeles,116.0
+2016,AL,Batting Average,Jose Altuve,Houston,0.338
+2016,AL,Complete Games,Chris Sale,Chicago,6.0
+2016,AL,Doubles,David Ortiz,Boston,48.0
+2016,AL,ERA,Aaron Sanchez,Toronto,3.0
+2016,AL,Games,Bryan Shaw,Cleveland,75.0
+2016,AL,Hits,Jose Altuve,Houston,216.0
+2016,AL,Home Runs,Mark Trumbo,Baltimore,47.0
+2016,AL,On Base Percentage,Mike Trout,Los Angeles,0.441
+2016,AL,RBI,Edwin Encarnacion,Toronto,127.0
+2016,AL,Runs,Mike Trout,Los Angeles,123.0
+2016,AL,Saves,Zach Britton,Baltimore,47.0
+2016,AL,Shutouts,Corey Kluber,Cleveland,2.0
+2016,AL,Slugging Average,David Ortiz,Boston,0.62
+2016,AL,Stolen Bases,Rajai Davis,Cleveland,43.0
+2016,AL,Strikeouts,Justin Verlander,Detroit,254.0
+2016,AL,Total Bases,Mookie Betts,Boston,359.0
+2016,AL,Triples,Adam Eaton,Chicago,9.0
+2016,AL,Winning Percentage,Aaron Sanchez,Toronto,0.882
+2016,AL,Wins,Rick Porcello,Boston,22.0
+2016,NL,Base on Balls,Paul Goldschmidt,Arizona,110.0
+2016,NL,Batting Average,DJ LeMahieu,Colorado,0.348
+2016,NL,Complete Games,Johnny Cueto,San Francisco,5.0
+2016,NL,Doubles,Daniel Murphy,Washington,47.0
+2016,NL,ERA,Kyle Hendricks,Chicago,2.13
+2016,NL,Games,Brad Hand,San Diego,82.0
+2016,NL,Hits,Jean Segura,Arizona,203.0
+2016,NL,Home Runs,Nolan Arenado,Colorado,41.0
+2016,NL,On Base Percentage,Joey Votto,Cincinnati,0.434
+2016,NL,RBI,Nolan Arenado,Colorado,133.0
+2016,NL,Runs,Kris Bryant,Chicago,121.0
+2016,NL,Saves,Jeurys Familia,New York,51.0
+2016,NL,Shutouts,Clayton Kershaw,Los Angeles,3.0
+2016,NL,Slugging Average,Daniel Murphy,Washington,0.595
+2016,NL,Stolen Bases,Jonathan Villar,Milwaukee,62.0
+2016,NL,Strikeouts,Max Scherzer,Washington,284.0
+2016,NL,Total Bases,Nolan Arenado,Colorado,352.0
+2016,NL,Triples,Brandon Crawford,San Francisco,11.0
+2016,NL,Winning Percentage,Jon Lester,Chicago,0.792
+2016,NL,Wins,Max Scherzer,Washington,20.0
+2017,AL,Base on Balls,Aaron Judge,Yankees,127.0
+2017,AL,Batting Average,Jose Altuve,Astros,0.346
+2017,AL,Complete Games,Corey Kluber,Guardians,5.0
+2017,AL,Doubles,Jose Ramirez,Guardians,56.0
+2017,AL,ERA,Corey Kluber,Guardians,2.25
+2017,AL,Games,Bryan Shaw,Guardians,79.0
+2017,AL,Hits,Jose Altuve,Astros,204.0
+2017,AL,Home Runs,Aaron Judge,Yankees,52.0
+2017,AL,On Base Percentage,Mike Trout,Angels,0.442
+2017,AL,RBI,Nelson Cruz,Mariners,119.0
+2017,AL,Runs,Aaron Judge,Yankees,128.0
+2017,AL,Saves,Alex Colome,Rays,46.0
+2017,AL,Shutouts,Corey Kluber,Guardians,3.0
+2017,AL,Slugging Average,Mike Trout,Angels,0.629
+2017,AL,Stolen Bases,Whit Merrifield,Royals,34.0
+2017,AL,Strikeouts,Chris Sale,Red Sox,308.0
+2017,AL,Total Bases,Jose Abreu,White Sox,343.0
+2017,AL,Triples,Nick Castellanos,Tigers,10.0
+2017,AL,Winning Percentage,Corey Kluber,Guardians,0.818
+2017,AL,Wins,Carlos Carrasco,Guardians,18.0
+2017,NL,Base on Balls,Joey Votto,Cincinnati Reds,134.0
+2017,NL,Batting Average,Charlie Blackmon,Rockies,0.331
+2017,NL,Complete Games,Carlos Martinez,Cardinals,2.0
+2017,NL,Doubles,Nolan Arenado,Rockies,43.0
+2017,NL,ERA,Clayton Kershaw,Dodgers,2.21
+2017,NL,Games,Corey Knebel,Brewers,76.0
+2017,NL,Hits,Charlie Blackmon,Rockies,213.0
+2017,NL,Home Runs,Giancarlo Stanton,Marlins,59.0
+2017,NL,On Base Percentage,Joey Votto,Cincinnati Reds,0.454
+2017,NL,RBI,Giancarlo Stanton,Marlins,132.0
+2017,NL,Runs,Charlie Blackmon,Rockies,137.0
+2017,NL,Saves,Greg Holland,Rockies,41.0
+2017,NL,Shutouts,Carlos Martinez,Cardinals,2.0
+2017,NL,Slugging Average,Giancarlo Stanton,Marlins,0.631
+2017,NL,Stolen Bases,Dee Gordon,Marlins,60.0
+2017,NL,Strikeouts,Max Scherzer,Nationals,268.0
+2017,NL,Total Bases,Charlie Blackmon,Rockies,387.0
+2017,NL,Triples,Charlie Blackmon,Rockies,14.0
+2017,NL,Winning Percentage,Clayton Kershaw,Dodgers,0.818
+2017,NL,Wins,Clayton Kershaw,Dodgers,18.0
+2018,AL,Base on Balls,Mike Trout,Angels,122.0
+2018,AL,Batting Average,Mookie Betts,Red Sox,0.346
+2018,AL,Complete Games,Jose Berrios,Twins,2.0
+2018,AL,Doubles,Alex Bregman,Astros,50.0
+2018,AL,ERA,Blake Snell,Rays,1.89
+2018,AL,Games,Ryan Pressly,Twins,77.0
+2018,AL,Hits,Whit Merrifield,Royals,192.0
+2018,AL,Home Runs,Khris Davis,Athletics,48.0
+2018,AL,On Base Percentage,Mike Trout,Angels,0.46
+2018,AL,RBI,J.D. Martinez,Red Sox,130.0
+2018,AL,Runs,Mookie Betts,Red Sox,129.0
+2018,AL,Saves,Edwin Diaz,Mariners,57.0
+2018,AL,Shutouts,Jose Berrios,Twins,1.0
+2018,AL,Slugging Average,Mookie Betts,Red Sox,0.64
+2018,AL,Stolen Bases,Whit Merrifield,Royals,45.0
+2018,AL,Strikeouts,Justin Verlander,Astros,290.0
+2018,AL,Total Bases,J.D. Martinez,Red Sox,358.0
+2018,AL,Triples,Yolmer Sanchez,White Sox,10.0
+2018,AL,Winning Percentage,Charlie Morton,Astros,0.833
+2018,AL,Wins,Blake Snell,Rays,21.0
+2018,NL,Base on Balls,Bryce Harper,Nationals,130.0
+2018,NL,Batting Average,Christian Yelich,Brewers,0.326
+2018,NL,Complete Games,Michael Foltynewicz,Braves,2.0
+2018,NL,Doubles,Freddie Freeman,Braves,44.0
+2018,NL,ERA,Jacob deGrom,Mets,1.7
+2018,NL,Games,Brad Ziegler,Marlins,82.0
+2018,NL,Hits,Freddie Freeman,Braves,191.0
+2018,NL,Home Runs,Nolan Arenado,Rockies,38.0
+2018,NL,On Base Percentage,Joey Votto,Cincinnati Reds,0.417
+2018,NL,RBI,Javier Baez,Cubs,111.0
+2018,NL,Runs,Charlie Blackmon,Rockies,119.0
+2018,NL,Saves,Wade Davis,Rockies,43.0
+2018,NL,Shutouts,Patrick Corbin,Diamondbacks,1.0
+2018,NL,Slugging Average,Christian Yelich,Brewers,0.598
+2018,NL,Stolen Bases,Trea Turner,Nationals,43.0
+2018,NL,Strikeouts,Max Scherzer,Nationals,300.0
+2018,NL,Total Bases,Christian Yelich,Brewers,343.0
+2018,NL,Triples,Ketel Marte,Diamondbacks,12.0
+2018,NL,Winning Percentage,Miles Mikolas,Cardinals,0.818
+2018,NL,Wins,Jon Lester,Cubs,18.0
+2019,AL,Base on Balls,Alex Bregman,Astros,119.0
+2019,AL,Batting Average,Tim Anderson,White Sox,0.335
+2019,AL,Complete Games,Shane Bieber,Guardians,3.0
+2019,AL,Doubles,Rafael Devers,Red Sox,54.0
+2019,AL,ERA,Gerrit Cole,Astros,2.5
+2019,AL,Games,Yusmeiro Petit,Athletics,80.0
+2019,AL,Hits,Whit Merrifield,Royals,206.0
+2019,AL,Home Runs,Jorge Soler,Royals,48.0
+2019,AL,On Base Percentage,Mike Trout,Angels,0.438
+2019,AL,RBI,Jose Abreu,White Sox,123.0
+2019,AL,Runs,Mookie Betts,Red Sox,135.0
+2019,AL,Saves,Roberto Osuna,Astros,38.0
+2019,AL,Shutouts,Shane Bieber,Guardians,2.0
+2019,AL,Slugging Average,Mike Trout,Angels,0.645
+2019,AL,Stolen Bases,Mallex Smith,Rays,46.0
+2019,AL,Strikeouts,Gerrit Cole,Astros,326.0
+2019,AL,Total Bases,Rafael Devers,Red Sox,359.0
+2019,AL,Triples,Hunter Dozier,Royals,10.0
+2019,AL,Winning Percentage,Gerrit Cole,Astros,0.8
+2019,AL,Wins,Justin Verlander,Astros,21.0
+2019,NL,Base on Balls,Rhys Hoskins,Phillies,116.0
+2019,NL,Batting Average,Christian Yelich,Brewers,0.329
+2019,NL,Complete Games,Sandy Alcantara,Marlins,2.0
+2019,NL,Doubles,Anthony Rendon,Nationals,44.0
+2019,NL,ERA,Hyun-Jin Ryu,Dodgers,2.32
+2019,NL,Games,Alex Claudio,Brewers,83.0
+2019,NL,Hits,Ozzie Albies,Braves,189.0
+2019,NL,Home Runs,Pete Alonso,Mets,53.0
+2019,NL,On Base Percentage,Christian Yelich,Brewers,0.429
+2019,NL,RBI,Anthony Rendon,Nationals,126.0
+2019,NL,Runs,Ronald Acuna Jr.,Braves,127.0
+2019,NL,Saves,Kirby Yates,Padres,41.0
+2019,NL,Shutouts,Sandy Alcantara,Marlins,2.0
+2019,NL,Slugging Average,Christian Yelich,Brewers,0.671
+2019,NL,Stolen Bases,Ronald Acuna Jr.,Braves,37.0
+2019,NL,Strikeouts,Jacob deGrom,Mets,255.0
+2019,NL,Total Bases,Cody Bellinger,Dodgers,351.0
+2019,NL,Triples,Eduardo Escobar,Diamondbacks,10.0
+2019,NL,Winning Percentage,Walker Buehler,Dodgers,0.778
+2019,NL,Wins,Stephen Strasburg,Nationals,18.0
+2020,AL,Base on Balls,Carlos Santana,Guardians,47.0
+2020,AL,Batting Average,DJ LeMahieu,Yankees,0.364
+2020,AL,Complete Games,Gerrit Cole,Yankees,2.0
+2020,AL,Doubles,Cesar Hernandez,Guardians,20.0
+2020,AL,ERA,Shane Bieber,Guardians,1.63
+2020,AL,Games,Scott Barlow,Royals,32.0
+2020,AL,Hits,Jose Abreu,White Sox,76.0
+2020,AL,Home Runs,Luke Voit,Yankees,22.0
+2020,AL,On Base Percentage,DJ LeMahieu,Yankees,0.421
+2020,AL,RBI,Jose Abreu,White Sox,60.0
+2020,AL,Runs,Tim Anderson,White Sox,45.0
+2020,AL,Saves,Brad Hand,Guardians,16.0
+2020,AL,Shutouts,Gerrit Cole,Yankees,1.0
+2020,AL,Slugging Average,Jose Abreu,White Sox,0.617
+2020,AL,Stolen Bases,Adalberto Mondesi,Royals,24.0
+2020,AL,Strikeouts,Shane Bieber,Guardians,122.0
+2020,AL,Total Bases,Jose Abreu,White Sox,148.0
+2020,AL,Triples,Kyle Tucker,Astros,6.0
+2020,AL,Winning Percentage,Shane Bieber,Guardians,0.889
+2020,AL,Wins,Shane Bieber,Guardians,8.0
+2020,NL,Base on Balls,Bryce Harper,Phillies,49.0
+2020,NL,Batting Average,Juan Soto,Nationals,0.351
+2020,NL,Complete Games,Trevor Bauer,Cincinnati Reds,2.0
+2020,NL,Doubles,Freddie Freeman,Braves,23.0
+2020,NL,ERA,Trevor Bauer,Cincinnati Reds,1.73
+2020,NL,Games,Tyler Rogers,Giants,29.0
+2020,NL,Hits,Trea Turner,Nationals,78.0
+2020,NL,Home Runs,Marcell Ozuna,Braves,18.0
+2020,NL,On Base Percentage,Juan Soto,Nationals,0.49
+2020,NL,RBI,Marcell Ozuna,Braves,56.0
+2020,NL,Runs,Freddie Freeman,Braves,51.0
+2020,NL,Saves,Josh Hader,Brewers,13.0
+2020,NL,Shutouts,Trevor Bauer,Cincinnati Reds,2.0
+2020,NL,Slugging Average,Juan Soto,Nationals,0.695
+2020,NL,Stolen Bases,Trevor Story,Rockies,15.0
+2020,NL,Strikeouts,Jacob deGrom,Mets,104.0
+2020,NL,Total Bases,Marcell Ozuna,Braves,145.0
+2020,NL,Triples,Trevor Story,Rockies,4.0
+2020,NL,Winning Percentage,Max Fried,Braves,1.0
+2020,NL,Wins,Yu Darvish,Cubs,8.0
+2021,AL,Base on Balls,Joey Gallo,Rangers,111.0
+2021,AL,Batting Average,Yuli Gurriel,Astros,0.319
+2021,AL,Complete Games,Gerrit Cole,Yankees,2.0
+2021,AL,Doubles,Jeimer Candelario,Tigers,42.0
+2021,AL,ERA,Robbie Ray,Blue Jays,2.84
+2021,AL,Games,Bryan Shaw,Guardians,81.0
+2021,AL,Hits,Bo Bichette,Blue Jays,191.0
+2021,AL,Home Runs,Vladimir Guerrero Jr.,Blue Jays,48.0
+2021,AL,On Base Percentage,Vladimir Guerrero Jr.,Blue Jays,0.401
+2021,AL,RBI,Salvador Perez,Royals,121.0
+2021,AL,Runs,Vladimir Guerrero Jr.,Blue Jays,123.0
+2021,AL,Saves,Liam Hendriks,White Sox,38.0
+2021,AL,Shutouts,Sean Manaea,Athletics,2.0
+2021,AL,Slugging Average,Vladimir Guerrero Jr.,Blue Jays,0.601
+2021,AL,Stolen Bases,Whit Merrifield,Royals,40.0
+2021,AL,Strikeouts,Robbie Ray,Blue Jays,248.0
+2021,AL,Total Bases,Vladimir Guerrero Jr.,Blue Jays,363.0
+2021,AL,Triples,Shohei Ohtani,Angels,8.0
+2021,AL,Winning Percentage,"Lance McCullers, Jr.",Astros,0.722
+2021,AL,Wins,Gerrit Cole,Yankees,16.0
+2021,NL,Base on Balls,Juan Soto,Nationals,145.0
+2021,NL,Batting Average,Trea Turner,Nationals,0.328
+2021,NL,Complete Games,German Marquez,Rockies,3.0
+2021,NL,Doubles,Bryce Harper,Phillies,42.0
+2021,NL,ERA,Corbin Burnes,Brewers,2.43
+2021,NL,Games,Tyler Rogers,Giants,80.0
+2021,NL,Hits,Trea Turner,Nationals,195.0
+2021,NL,Home Runs,Fernando Tatis Jr.,Padres,42.0
+2021,NL,On Base Percentage,Juan Soto,Nationals,0.465
+2021,NL,RBI,Adam Duvall,Marlins,113.0
+2021,NL,Runs,Freddie Freeman,Braves,120.0
+2021,NL,Saves,Mark Melancon,Padres,39.0
+2021,NL,Shutouts,Anthony DeSclafani,Giants,2.0
+2021,NL,Slugging Average,Bryce Harper,Phillies,0.615
+2021,NL,Stolen Bases,Trea Turner,Nationals,32.0
+2021,NL,Strikeouts,Zack Wheeler,Phillies,247.0
+2021,NL,Total Bases,Trea Turner,Nationals,319.0
+2021,NL,Triples,David Peralta,Diamondbacks,8.0
+2021,NL,Winning Percentage,Julio Urias,Dodgers,0.87
+2021,NL,Wins,Julio Urias,Dodgers,20.0
+2022,AL,Base on Balls,Aaron Judge,Yankees,111.0
+2022,AL,Batting Average,Luis Arraez,Twins,0.316
+2022,AL,Complete Games,Framber Valdez,Astros,3.0
+2022,AL,Doubles,José Ramírez,Guardians,44.0
+2022,AL,ERA,Justin Verlander,Astros,1.75
+2022,AL,Games,Adam Cimber,Blue Jays,77.0
+2022,AL,Hits,Bo Bichette,Blue Jays,189.0
+2022,AL,Home Runs,Aaron Judge,Yankees,62.0
+2022,AL,On Base Percentage,Aaron Judge,Yankees,0.425
+2022,AL,RBI,Aaron Judge,Yankees,131.0
+2022,AL,Runs,Aaron Judge,Yankees,133.0
+2022,AL,Saves,Emmanuel Clase,Guardians,42.0
+2022,AL,Shutouts,Dylan Cease,White Sox,1.0
+2022,AL,Slugging Average,Aaron Judge,Yankees,0.686
+2022,AL,Stolen Bases,Jorge Mateo,Orioles,35.0
+2022,AL,Strikeouts,Corbin Burnes,Brewers,243.0
+2022,AL,Total Bases,Aaron Judge,Yankees,391.0
+2022,AL,Triples,Amed Rosario,Guardians,9.0
+2022,AL,Winning Percentage,Justin Verlander,Astros,0.818
+2022,AL,Wins,Justin Verlander,Astros,18.0
+2022,NL,Base on Balls,Juan Soto,Nationals,135.0
+2022,NL,Batting Average,Jeff McNeil,Mets,0.326
+2022,NL,Complete Games,Sandy Alcantara,Marlins,6.0
+2022,NL,Doubles,Freddie Freeman,Dodgers,44.0
+2022,NL,ERA,Julio Urías,Dodgers,2.16
+2022,NL,Games,John Brebbia,Giants,76.0
+2022,NL,Hits,Freddie Freeman,Dodgers,11.0
+2022,NL,Home Runs,Kyle Schwarber,Phillies,46.0
+2022,NL,On Base Percentage,Freddie Freeman,Dodgers,0.407
+2022,NL,RBI,Pete Alonso,Mets,131.0
+2022,NL,Runs,Mookie Betts,Dodgers,117.0
+2022,NL,Saves,Kenley Jansen,Braves,41.0
+2022,NL,Shutouts,Sandy Alcantara,Marlins,1.0
+2022,NL,Slugging Average,Paul Goldschmidt,Cardinals,0.578
+2022,NL,Stolen Bases,Jon Berti,Marlins,41.0
+2022,NL,Strikeouts,Corbin Burnes,Brewers,243.0
+2022,NL,Total Bases,Austin Riley,Braves,325.0
+2022,NL,Triples,Gavin Lux,Dodgers,7.0
+2022,NL,Winning Percentage,Kyle Wright,Braves,0.808
+2022,NL,Wins,Kyle Wright,Braves,21.0
+2023,AL,Base on Balls,J.P. Crawford,Mariners,94.0
+2023,AL,Batting Average,Yandy Díaz,Rays,0.33
+2023,AL,Complete Games,Jordan Lyles,Royals,3.0
+2023,AL,Doubles,Corey Seager,Rangers,42.0
+2023,AL,ERA,Gerrit Cole,Yankees,2.63
+2023,AL,Games,Matt Brash,Mariners,78.0
+2023,AL,Hits,Marcus Semien,Rangers,185.0
+2023,AL,Home Runs,Shohei Ohtani,Angels,44.0
+2023,AL,On Base Percentage,Shohei Ohtani,Angels,0.412
+2023,AL,RBI,Kyle Tucker,Astros,112.0
+2023,AL,Runs,Marcus Semien,Rangers,122.0
+2023,AL,Saves,Emmanuel Clase,Guardians,44.0
+2023,AL,Shutouts,Gerrit Cole,Yankees,2.0
+2023,AL,Slugging Average,Shohei Ohtani,Angels,0.654
+2023,AL,Stolen Bases,Esteury Ruiz,Athletics,67.0
+2023,AL,Strikeouts,Kevin Gausman,Blue Jays,237.0
+2023,AL,Total Bases,Shohei Ohtani,Angels,325.0
+2023,AL,Triples,Bobby Witt Jr.,Royals,11.0
+2023,AL,Winning Percentage,Gerrit Cole,Yankees,0.789
+2023,AL,Wins,Chris Bassitt,Blue Jays,16.0
+2023,NL,Base on Balls,Juan Soto,Padres,132.0
+2023,NL,Batting Average,Luis Arraez,Marlins,0.354
+2023,NL,Complete Games,Sandy Alcantara,Marlins,3.0
+2023,NL,Doubles,Freddie Freeman,Dodgers,59.0
+2023,NL,ERA,Blake Snell,Padres,2.25
+2023,NL,Games,Miguel Castro,Diamondbacks,75.0
+2023,NL,Hits,Ronald Acuña Jr.,Braves,217.0
+2023,NL,Home Runs,Matt Olson,Braves,54.0
+2023,NL,On Base Percentage,Ronald Acuña Jr.,Braves,0.416
+2023,NL,RBI,Matt Olson,Braves,139.0
+2023,NL,Runs,Ronald Acuña Jr.,Braves,149.0
+2023,NL,Saves,David Bednar,Pirates,39.0
+2023,NL,Shutouts,Sandy Alcantara,Marlins,1.0
+2023,NL,Slugging Average,Matt Olson,Braves,0.604
+2023,NL,Stolen Bases,Ronald Acuña Jr.,Braves,73.0
+2023,NL,Strikeouts,Spencer Strider,Braves,281.0
+2023,NL,Total Bases,Ronald Acuña Jr.,Braves,383.0
+2023,NL,Triples,Corbin Carroll,Diamondbacks,10.0
+2023,NL,Winning Percentage,Spencer Strider,Braves,0.8
+2023,NL,Wins,Spencer Strider,Braves,20.0
