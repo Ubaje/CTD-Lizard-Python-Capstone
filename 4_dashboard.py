@@ -234,6 +234,29 @@ st.markdown("""
 
     hr { border-color: var(--border) !important; }
 
+    /* ── Sidebar section labels ── */
+    .sb-section {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 800;
+        font-size: 0.7rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin: 0.8rem 0 0.2rem;
+    }
+    .sb-desc {
+        font-size: 0.75rem;
+        color: var(--muted);
+        line-height: 1.4;
+        margin-bottom: 0.6rem;
+    }
+    .sb-affects {
+        font-size: 0.72rem;
+        color: #4a7a8a;
+        font-style: italic;
+        margin: 0.1rem 0 0.8rem;
+    }
+
     /* Hide streamlit chrome */
     #MainMenu, footer, header { visibility: hidden; }
 </style>
@@ -366,20 +389,35 @@ COLORS = [RED, AMBER, TEAL, BLUE, GREEN, "#c084fc", "#fb923c"]
 with st.sidebar:
     st.markdown('<div class="sidebar-logo">MLB<span>.</span>DATA</div>', unsafe_allow_html=True)
 
+    # ── Section: Global filters ───────────────────────────────────────────────
+    st.markdown("""
+    <div class="sb-section">GLOBAL FILTERS</div>
+    <div class="sb-desc">Apply to every chart and table on the page.</div>
+    """, unsafe_allow_html=True)
+
     all_years  = sorted(players_df["year"].dropna().unique().astype(int))
     year_range = st.slider("Season Range",
                            min_value=min(all_years), max_value=max(all_years),
                            value=(min(all_years), max(all_years)))
+    st.markdown('<div class="sb-affects">↳ All charts · KPI strip · Stat Leaders table</div>', unsafe_allow_html=True)
 
     leagues_available = sorted(players_df["league"].dropna().unique()) if "league" in players_df.columns else []
     sel_league = st.selectbox("League", ["Both"] + leagues_available)
+    st.markdown('<div class="sb-affects">↳ All charts · Stat Leaders table</div>', unsafe_allow_html=True)
 
-    # Teams are already normalized to canonical names by the scraper
     available_canonical = sorted(players_df["team"].dropna().unique())
     sel_canonical = st.multiselect("Teams", available_canonical)
     sel_teams = sel_canonical
+    st.markdown('<div class="sb-affects">↳ HR Trend · BA Distribution · Scatter · Decade Summary</div>', unsafe_allow_html=True)
 
     st.markdown("---")
+
+    # ── Section: Scatter controls ─────────────────────────────────────────────
+    st.markdown("""
+    <div class="sb-section">SCATTER PLOT</div>
+    <div class="sb-desc">Controls the Player Performance scatter chart only.
+    Each axis shows the best recorded value per player across the selected season range.</div>
+    """, unsafe_allow_html=True)
 
     all_stat_cols = [
         "home_runs","batting_avg","hits","rbi","runs","doubles","triples",
@@ -388,12 +426,22 @@ with st.sidebar:
     ]
     numeric_cols = [c for c in all_stat_cols
                     if c in players_df.columns and players_df[c].notna().any()]
-    stat_x = st.selectbox("Scatter X", numeric_cols, index=0)
-    stat_y = st.selectbox("Scatter Y", numeric_cols, index=min(1, len(numeric_cols)-1))
+    stat_x = st.selectbox("X Axis", numeric_cols, index=0)
+    stat_y = st.selectbox("Y Axis", numeric_cols, index=min(1, len(numeric_cols)-1))
+    st.markdown('<div class="sb-affects">↳ Scatter chart only</div>', unsafe_allow_html=True)
 
     st.markdown("---")
+
+    # ── Section: Stat Leaders filter ─────────────────────────────────────────
+    st.markdown("""
+    <div class="sb-section">STAT LEADERS TABLE</div>
+    <div class="sb-desc">Narrows the leaders table to one stat category.
+    Does not affect any charts.</div>
+    """, unsafe_allow_html=True)
+
     all_stats = sorted(events_df["statistic"].dropna().unique()) if "statistic" in events_df.columns else []
     sel_stat  = st.selectbox("Stat Category", ["All"] + list(all_stats))
+    st.markdown('<div class="sb-affects">↳ Stat Leaders table only</div>', unsafe_allow_html=True)
 
 # -----------------------------------------------------------------------------
 # FILTERED DATA
@@ -493,20 +541,66 @@ st.markdown('<div class="sec-head"><span class="dot"></span>Player Performance</
 c3, c4 = st.columns([3, 2], gap="medium")
 
 with c3:
-    req = [c for c in [stat_x, stat_y, "player_name", "team", "year"] if c in filtered.columns]
-    sc_data = filtered[req].dropna(subset=[stat_x, stat_y])
-    color_col = "league" if (sel_league == "Both" and "league" in sc_data.columns) else "team"
-    fig3 = px.scatter(
-        sc_data, x=stat_x, y=stat_y,
-        color=color_col if color_col in sc_data.columns else None,
-        hover_data=[c for c in ["player_name","year","team"] if c in sc_data.columns],
-        color_discrete_sequence=COLORS,
-        title=f"{stat_y.replace('_',' ').title()} vs {stat_x.replace('_',' ').title()}",
-    )
-    fig3.update_traces(marker=dict(size=8, opacity=0.75,
-                                   line=dict(width=0.5, color="#0b0f1a")))
-    fig3.update_layout(**PL, height=340)
-    st.plotly_chart(fig3, use_container_width=True)
+    # Build scatter from events_df (full dataset, not filtered_events which may
+    # be filtered by stat category). Use each player's BEST value for each stat
+    # across all years in the selected year range -- one point per player.
+    COL_TO_STAT = {v: k for k, v in STAT_TO_COL.items()}
+    x_stat_name = COL_TO_STAT.get(stat_x, stat_x)
+    y_stat_name = COL_TO_STAT.get(stat_y, stat_y)
+
+    # Year-range filtered events (ignore stat category filter for scatter)
+    yr_events = events_df[events_df["year"].between(year_range[0], year_range[1])].copy()
+    if sel_league != "Both" and "league" in yr_events.columns:
+        yr_events = yr_events[yr_events["league"] == sel_league]
+    if sel_teams and "team" in yr_events.columns:
+        yr_events = yr_events[yr_events["team"].isin(sel_teams)]
+
+    # Best (max) value per player for each axis stat across all years in range
+    def best_stat(ev, stat_name, col_name):
+        """Return each player's best (max) value for a stat, with their most
+        recent team and league — merge only on player_name so team changes
+        between seasons don't cause players to drop out."""
+        rows = ev[ev["statistic"] == stat_name][["player","team","league","year","value"]]
+        if rows.empty:
+            return pd.DataFrame(columns=["player_name","team","league", col_name])
+        # Best value per player
+        best = (rows.groupby("player")["value"]
+                    .max().reset_index()
+                    .rename(columns={"value": col_name, "player": "player_name"}))
+        # Most recent team+league for that player
+        latest = (rows.sort_values("year")
+                      .groupby("player")[["team","league"]]
+                      .last().reset_index()
+                      .rename(columns={"player": "player_name"}))
+        return best.merge(latest, on="player_name", how="left")
+
+    df_x = best_stat(yr_events, x_stat_name, stat_x)
+    df_y = best_stat(yr_events, y_stat_name, stat_y)
+
+    if df_x.empty or df_y.empty:
+        missing = x_stat_name if df_x.empty else y_stat_name
+        st.info(f"No data found for '{missing}'. Try a different stat combination.")
+    else:
+        # Merge on player name only — team/league come from whichever side has them
+        sc_data = df_x.merge(df_y[["player_name", stat_y]], on="player_name", how="inner")
+        color_col = "league" if sel_league == "Both" else "team"
+        color_col = color_col if (color_col in sc_data.columns and sc_data[color_col].notna().any()) else None
+
+        if sc_data.empty:
+            st.info(f"No players found with both {x_stat_name} and {y_stat_name} data.")
+        else:
+            fig3 = px.scatter(
+                sc_data, x=stat_x, y=stat_y,
+                color=color_col,
+                hover_data=[c for c in ["player_name","team","league"] if c in sc_data.columns],
+                color_discrete_sequence=COLORS,
+                labels={stat_x: x_stat_name, stat_y: y_stat_name},
+                title=f"{y_stat_name} vs {x_stat_name}",
+            )
+            fig3.update_traces(marker=dict(size=9, opacity=0.8,
+                                           line=dict(width=0.5, color="#0b0f1a")))
+            fig3.update_layout(**PL, height=340)
+            st.plotly_chart(fig3, use_container_width=True)
 
 with c4:
     if "team" in filtered_events.columns and not filtered_events.empty:
