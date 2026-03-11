@@ -1,15 +1,6 @@
-"""
-MLB Capstone -- Program 4: Interactive Streamlit Dashboard
-=========================================================
-Visualizes MLB historical data from mlb.db using Plotly.
-Uses only the `events` and `players` tables produced by the scraper.
-
-Run locally:
-    streamlit run 4_dashboard.py
-
-Deploy to Streamlit Cloud:
-    Push repo to GitHub, then connect at share.streamlit.io
-"""
+# Program 4 - Streamlit Dashboard
+# Loads data from mlb.db and shows 5 interactive charts.
+# Run with: streamlit run 4_dashboard.py
 
 import os
 import sqlite3
@@ -27,10 +18,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# -----------------------------------------------------------------------------
-# CSS — Editorial / Sports-Magazine
-# Deep navy base, crisp white cards, sharp red accent, condensed display font
-# -----------------------------------------------------------------------------
+# Page styling - dark navy theme with red accent
 
 st.markdown("""
 <style>
@@ -272,11 +260,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# -----------------------------------------------------------------------------
-# DATA LOADING
-# -----------------------------------------------------------------------------
-
-# Mapping from events.statistic -> players column name
+# Maps event statistic names to column names used in the players table
 STAT_TO_COL = {
     "Home Runs":       "home_runs",
     "Batting Average": "batting_avg",
@@ -320,11 +304,10 @@ def load_data():
     if "value" in events.columns:
         events["value"] = pd.to_numeric(events["value"], errors="coerce")
 
-    # ── Build a wide stats table from events ─────────────────────────────────
-    # Pivot events into one row per player+year+league, stat categories as cols
-    ev = events.copy()
+    # Pivot events into one wide row per player so we can merge with players table
+        ev = events.copy()
     ev["col"] = ev["statistic"].map(STAT_TO_COL)
-    ev = ev[ev["col"].notna()]   # drop stats we don't have a column mapping for
+    ev = ev[ev["col"].notna()]
 
     ev_wide = ev.pivot_table(
         index=["year", "league", "player", "team"],
@@ -335,17 +318,12 @@ def load_data():
     ev_wide.columns.name = None
     ev_wide = ev_wide.rename(columns={"player": "player_name"})
 
-    # ── Merge players (pivot) with ev_wide (events pivot) ────────────────────
-    # players has one row per stat leader per year; ev_wide has the same but
-    # wider. Outer-merge so we keep everyone, then fill missing values from
-    # whichever side has them.
+    # Merge both tables - outer join so we keep all rows, fill gaps from each side
     merge_keys = ["year", "league", "player_name", "team"]
-    # Only merge on keys that exist in both
     merge_keys = [k for k in merge_keys if k in players.columns and k in ev_wide.columns]
 
     merged = players.merge(ev_wide, on=merge_keys, how="outer", suffixes=("", "_ev"))
 
-    # For each stat column, if the players version is null, fill from events version
     for col in ev_wide.columns:
         if col in merge_keys:
             continue
@@ -356,7 +334,6 @@ def load_data():
         elif ev_col in merged.columns:
             merged.rename(columns={ev_col: col}, inplace=True)
 
-    # Coerce all stat columns to numeric
     stat_cols = [c for c in merged.columns if c not in merge_keys + ["decade"]]
     for col in stat_cols:
         merged[col] = pd.to_numeric(merged[col], errors="coerce")
@@ -368,9 +345,7 @@ def load_data():
 
 players_df, events_df = load_data()
 
-# -----------------------------------------------------------------------------
-# PLOTLY THEME
-# -----------------------------------------------------------------------------
+# Shared Plotly layout settings so all charts look consistent
 
 PL = dict(
     paper_bgcolor="#1a2233",
@@ -392,14 +367,11 @@ BLUE  = "#60a5fa"
 GREEN = "#4ade80"
 COLORS = [RED, AMBER, TEAL, BLUE, GREEN, "#c084fc", "#fb923c"]
 
-# -----------------------------------------------------------------------------
-# SIDEBAR
-# -----------------------------------------------------------------------------
+# Sidebar filters
 
 with st.sidebar:
     st.markdown('<div class="sidebar-logo">MLB<span>.</span>DATA</div>', unsafe_allow_html=True)
 
-    # ── Section: Global filters ───────────────────────────────────────────────
     st.markdown("""
     <div class="sb-section">GLOBAL FILTERS</div>
     <div class="sb-desc">Apply to every chart and table on the page.</div>
@@ -418,31 +390,55 @@ with st.sidebar:
     available_canonical = sorted(players_df["team"].dropna().unique())
     sel_canonical = st.multiselect("Teams", available_canonical)
     sel_teams = sel_canonical
-    st.markdown('<div class="sb-affects">↳ HR Trend · BA Distribution · Scatter · Decade Summary</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sb-affects">↳ HR Trend · BA Distribution · Heatmap · Decade Summary</div>', unsafe_allow_html=True)
 
     st.markdown("---")
 
-    # ── Section: Scatter controls ─────────────────────────────────────────────
+    # Decade chart controls
     st.markdown("""
-    <div class="sb-section">SCATTER PLOT</div>
-    <div class="sb-desc">Controls the Player Performance scatter chart only.
-    Each axis shows the best recorded value per player across the selected season range.</div>
+    <div class="sb-section">DECADE CHART</div>
+    <div class="sb-desc">Choose which two stats to compare by decade.
+    Bars use the left axis, line uses the right axis.</div>
     """, unsafe_allow_html=True)
 
-    all_stat_cols = [
-        "home_runs","batting_avg","hits","rbi","runs","doubles","triples",
-        "stolen_bases","total_bases","obp","slg","bb",
-        "era","wins","so","saves","cg","sho","win_pct","games",
+    decade_stat_options = [
+        "home_runs", "batting_avg", "hits", "rbi", "runs", "doubles",
+        "triples", "stolen_bases", "total_bases", "obp", "slg", "bb",
+        "era", "wins", "so", "saves", "cg", "sho", "win_pct", "games",
     ]
-    numeric_cols = [c for c in all_stat_cols
-                    if c in players_df.columns and players_df[c].notna().any()]
-    stat_x = st.selectbox("X Axis", numeric_cols, index=0)
-    stat_y = st.selectbox("Y Axis", numeric_cols, index=min(1, len(numeric_cols)-1))
-    st.markdown('<div class="sb-affects">↳ Scatter chart only</div>', unsafe_allow_html=True)
+    decade_stat_options = [c for c in decade_stat_options
+                           if c in players_df.columns and players_df[c].notna().any()]
+
+    STAT_LABELS = {
+        "home_runs": "Home Runs", "batting_avg": "Batting Average",
+        "hits": "Hits", "rbi": "RBI", "runs": "Runs",
+        "doubles": "Doubles", "triples": "Triples",
+        "stolen_bases": "Stolen Bases", "total_bases": "Total Bases",
+        "obp": "On-Base %", "slg": "Slugging %", "bb": "Walks",
+        "era": "ERA", "wins": "Wins", "so": "Strikeouts",
+        "saves": "Saves", "cg": "Complete Games", "sho": "Shutouts",
+        "win_pct": "Win %", "games": "Games",
+    }
+    decade_bar_stat = st.selectbox(
+        "Bar stat (left axis)",
+        decade_stat_options,
+        index=0,
+        format_func=lambda c: STAT_LABELS.get(c, c),
+    )
+
+    # Don't let the user pick the same stat for both axes
+    line_stat_options = [c for c in decade_stat_options if c != decade_bar_stat]
+    decade_line_stat = st.selectbox(
+        "Line stat (right axis)",
+        line_stat_options,
+        index=0,
+        format_func=lambda c: STAT_LABELS.get(c, c),
+    )
+    st.markdown('<div class="sb-affects">↳ Stats by Decade chart only</div>', unsafe_allow_html=True)
 
     st.markdown("---")
 
-    # ── Section: Stat Leaders filter ─────────────────────────────────────────
+    #Stat Leaders filter
     st.markdown("""
     <div class="sb-section">STAT LEADERS TABLE</div>
     <div class="sb-desc">Narrows the leaders table to one stat category.
@@ -453,9 +449,7 @@ with st.sidebar:
     sel_stat  = st.selectbox("Stat Category", ["All"] + list(all_stats))
     st.markdown('<div class="sb-affects">↳ Stat Leaders table only</div>', unsafe_allow_html=True)
 
-# -----------------------------------------------------------------------------
-# FILTERED DATA
-# -----------------------------------------------------------------------------
+# Apply sidebar filters to both dataframes
 
 p_mask = players_df["year"].between(year_range[0], year_range[1])
 if sel_league != "Both" and "league" in players_df.columns:
@@ -469,9 +463,7 @@ if sel_stat != "All" and "statistic" in events_df.columns:
     e_mask &= events_df["statistic"] == sel_stat
 filtered_events = events_df[e_mask]
 
-# -----------------------------------------------------------------------------
-# HEADER
-# -----------------------------------------------------------------------------
+# Page header
 
 st.markdown(f"""
 <div class="site-header">
@@ -483,9 +475,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# -----------------------------------------------------------------------------
-# KPI STRIP
-# -----------------------------------------------------------------------------
+# Top-level stats strip
 
 hr_max  = int(filtered["home_runs"].max())  if filtered["home_runs"].notna().any()   else 0
 ba_max  = filtered["batting_avg"].max()     if filtered["batting_avg"].notna().any() else 0
@@ -503,9 +493,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# -----------------------------------------------------------------------------
-# CHART ROW 1 — HR trend | BA distribution
-# -----------------------------------------------------------------------------
+# Chart row 1: HR trend and BA distribution
 
 st.markdown('<div class="sec-head"><span class="dot"></span>Offensive Trends</div>', unsafe_allow_html=True)
 st.markdown('<p class="chart-desc">The peak single-season home run total and batting average distribution across all league leaders in the selected year range and filters.</p>', unsafe_allow_html=True)
@@ -544,145 +532,160 @@ with c2:
                            xaxis_title="BA", yaxis_title="Count", height=320)
         st.plotly_chart(fig2, use_container_width=True)
 
-# -----------------------------------------------------------------------------
-# CHART ROW 2 — Scatter | Team leader count
-# -----------------------------------------------------------------------------
+# Chart row 2: Player dominance heatmap
 
-st.markdown('<div class="sec-head"><span class="dot"></span>Player Performance</div>', unsafe_allow_html=True)
-st.markdown('<p class="chart-desc">Left: each point is one player — axes show their best recorded value for the selected stats across all years in range. Right: which franchises have the most stat-leader appearances in the events table.</p>', unsafe_allow_html=True)
-c3, c4 = st.columns([3, 2], gap="medium")
+st.markdown('<div class="sec-head"><span class="dot"></span>Player Dominance Heatmap</div>', unsafe_allow_html=True)
+st.markdown("<p class=\"chart-desc\">Each cell shows a player's best recorded value for a stat category across the selected season range. Only players who led in <b>2+ categories</b> are shown. Darker red = higher value relative to that stat's range. Hover for exact values.</p>", unsafe_allow_html=True)
 
-with c3:
-    COL_TO_STAT = {v: k for k, v in STAT_TO_COL.items()}
-    x_stat_name = COL_TO_STAT.get(stat_x, stat_x)
-    y_stat_name = COL_TO_STAT.get(stat_y, stat_y)
+# Build wide pivot: one row per player, one col per stat category
+hm_ev = filtered_events.copy()
+hm_ev["col"] = hm_ev["statistic"].map(STAT_TO_COL)
+hm_ev = hm_ev[hm_ev["col"].notna()]
 
-    # ── Pivot the FULL events table into one wide row per player ─────────────
-    # Each row = one player, each column = their best-ever value for that stat.
-    # This means every single league leader entry contributes a data point,
-    # even if they only led in one stat category.
-    sc_ev = events_df.copy()
+if hm_ev.empty:
+    st.info("No data for heatmap with selected filters.")
+else:
+    hm_wide = hm_ev.pivot_table(
+        index="player",
+        columns="col",
+        values="value",
+        aggfunc="max",
+    )
+    hm_wide.index.name = "player"
 
-    # Apply year range and league/team filters
-    sc_ev = sc_ev[sc_ev["year"].between(year_range[0], year_range[1])]
-    if sel_league != "Both" and "league" in sc_ev.columns:
-        sc_ev = sc_ev[sc_ev["league"] == sel_league]
-    if sel_teams and "team" in sc_ev.columns:
-        sc_ev = sc_ev[sc_ev["team"].isin(sel_teams)]
+    # Only keep players who led in at least 2 categories
+    hm_wide = hm_wide[hm_wide.notna().sum(axis=1) >= 2]
 
-    # Map statistic names to column names, drop unknowns
-    sc_ev = sc_ev.copy()
-    sc_ev["col"] = sc_ev["statistic"].map(STAT_TO_COL)
-    sc_ev = sc_ev[sc_ev["col"].notna()]
+    # Sort players by how many categories they led (most dominant first)
+    hm_wide = hm_wide.loc[hm_wide.notna().sum(axis=1).sort_values(ascending=False).index]
 
-    if sc_ev.empty:
-        st.info("No events data for selected filters.")
-    else:
-        # One row per player: take max value across all years for each stat col
-        sc_wide = (sc_ev.groupby(["player", "team", "league"])
-                        .apply(lambda g: g.groupby("col")["value"].max())
-                        .reset_index())
+    # Cap at top 30 players so the chart stays readable
+    hm_wide = hm_wide.head(30)
 
-        # Pivot col -> separate columns
-        sc_wide = sc_wide.pivot_table(
-            index=["player","team","league"],
-            columns="col",
-            values="value",
-            aggfunc="max",
-        ).reset_index()
-        sc_wide.columns.name = None
-        sc_wide = sc_wide.rename(columns={"player": "player_name"})
-
-        # Only keep rows with both axes populated
-        if stat_x not in sc_wide.columns or stat_y not in sc_wide.columns:
-            st.info(f"Not enough data for {x_stat_name} vs {y_stat_name} in selected range.")
+    # Normalize each column 0–1 for coloring (so HR scale doesn't dwarf BA)
+    hm_norm = hm_wide.copy()
+    for col in hm_norm.columns:
+        col_min = hm_norm[col].min()
+        col_max = hm_norm[col].max()
+        if col_max > col_min:
+            hm_norm[col] = (hm_norm[col] - col_min) / (col_max - col_min)
         else:
-            sc_plot = sc_wide.dropna(subset=[stat_x, stat_y])
-            color_col = "league" if sel_league == "Both" else "team"
-            color_col = color_col if (color_col in sc_plot.columns and sc_plot[color_col].notna().any()) else None
+            hm_norm[col] = 0.5
 
-            if sc_plot.empty:
-                st.info(f"No players with both {x_stat_name} and {y_stat_name} data.")
+    # Friendly column labels (stat col name -> display name)
+    COL_DISPLAY = {v: k for k, v in STAT_TO_COL.items()}
+    display_cols = [COL_DISPLAY.get(c, c).replace("_", " ").title() for c in hm_norm.columns]
+
+    # Build custom hover text showing actual values
+    hover_text = []
+    for player in hm_wide.index:
+        row_hover = []
+        for col in hm_wide.columns:
+            val = hm_wide.loc[player, col]
+            display_name = COL_DISPLAY.get(col, col)
+            if pd.notna(val):
+                fmt = f"{val:.3f}" if val < 10 else str(int(val))
+                row_hover.append(f"{display_name}: {fmt}")
             else:
-                fig3 = px.scatter(
-                    sc_plot, x=stat_x, y=stat_y,
-                    color=color_col,
-                    hover_data=[c for c in ["player_name","team","league"] if c in sc_plot.columns],
-                    color_discrete_sequence=COLORS,
-                    labels={stat_x: x_stat_name, stat_y: y_stat_name},
-                    title=f"{y_stat_name} vs {x_stat_name}  ({len(sc_plot)} players)",
-                )
-                fig3.update_traces(marker=dict(size=9, opacity=0.8,
-                                               line=dict(width=0.5, color="#0b0f1a")))
-                fig3.update_layout(**PL, height=340)
-                st.plotly_chart(fig3, use_container_width=True)
+                row_hover.append("")
+        hover_text.append(row_hover)
 
-with c4:
-    if "team" in filtered_events.columns and not filtered_events.empty:
-        team_leads = (filtered_events.groupby("team").size()
-                      .reset_index(name="count")
-                      .sort_values("count", ascending=True).tail(14))
-        fig4 = go.Figure(go.Bar(
-            y=team_leads["team"], x=team_leads["count"],
-            orientation="h",
-            marker=dict(color=team_leads["count"],
-                        colorscale=[[0, "#1a2233"],[0.5, TEAL],[1.0, RED]],
-                        showscale=False),
-            text=team_leads["count"], textposition="outside",
-            textfont=dict(color="#e8eaf0", size=11),
-            hovertemplate="%{y}: %{x}<extra></extra>",
-        ))
-        fig4.update_layout(**PL, title="Stat Leader Appearances by Team",
-                           xaxis_title="Count", height=340)
-        st.plotly_chart(fig4, use_container_width=True)
-    else:
-        st.info("No team data available for selected filters.")
+    fig_hm = go.Figure(go.Heatmap(
+        z=hm_norm.values,
+        x=display_cols,
+        y=list(hm_wide.index),
+        text=hover_text,
+        hovertemplate="<b>%{y}</b><br>%{text}<extra></extra>",
+        colorscale=[
+            [0.0,  "#0b0f1a"],
+            [0.25, "#1a2d45"],
+            [0.5,  "#1a4a6e"],
+            [0.75, "#e63946"],
+            [1.0,  "#f4a261"],
+        ],
+        showscale=True,
+        colorbar=dict(
+            title=dict(text="Relative<br>Value", font=dict(color="#6b7a99", size=11)),
+            tickfont=dict(color="#6b7a99"),
+            bgcolor="#111827",
+            bordercolor="#1e2d45",
+            thickness=12,
+        ),
+        xgap=2,
+        ygap=2,
+    ))
 
-# -----------------------------------------------------------------------------
-# CHART ROW 3 — Decade summary (full width)
-# -----------------------------------------------------------------------------
+    hm_height = max(380, len(hm_wide) * 22 + 80)
+    fig_hm.update_layout(
+        **{k: v for k, v in PL.items() if k not in ("xaxis", "yaxis", "margin")},
+        title=f"Player × Stat Category Dominance  ({len(hm_wide)} players)",
+        xaxis=dict(side="bottom", tickangle=-35, tickfont=dict(color="#9aa3b8", size=11),
+                   gridcolor="#1e2d45"),
+        yaxis=dict(autorange="reversed", tickfont=dict(color="#e8eaf0", size=11),
+                   gridcolor="#1e2d45"),
+        height=hm_height,
+        margin=dict(t=50, b=100, l=140, r=60),
+    )
+    st.plotly_chart(fig_hm, use_container_width=True)
+
+# Chart row 3: Stats by decade
 
 st.markdown('<div class="sec-head"><span class="dot"></span>Stats by Decade</div>', unsafe_allow_html=True)
-st.markdown('<p class="chart-desc">Average home run totals (bars) and batting averages (line) among league leaders, grouped by decade. Shows how offensive production has shifted over time.</p>', unsafe_allow_html=True)
+st.markdown('<p class="chart-desc">Average stat values among league leaders grouped by decade. Choose any two stats in the sidebar — bars on the left axis, line on the right. Shows how production has shifted over time.</p>', unsafe_allow_html=True)
 
+bar_col  = decade_bar_stat  if decade_bar_stat  in filtered.columns else None
+line_col = decade_line_stat if decade_line_stat in filtered.columns else None
+
+valid_decade_cols = [c for c in [bar_col, line_col] if c is not None]
 decade_stats = (
-    filtered.groupby("decade")[["home_runs","batting_avg"]]
+    filtered.groupby("decade")[valid_decade_cols]
     .mean().round(3).reset_index().dropna(subset=["decade"])
-)
+) if valid_decade_cols else pd.DataFrame()
 decade_stats["decade_label"] = decade_stats["decade"].astype(str) + "s"
+
+bar_label  = STAT_LABELS.get(bar_col,  bar_col  or "")
+line_label = STAT_LABELS.get(line_col, line_col or "")
 
 if not decade_stats.empty:
     fig5 = go.Figure()
-    fig5.add_trace(go.Bar(
-        x=decade_stats["decade_label"], y=decade_stats["home_runs"],
-        name="Avg HR", marker_color=RED, opacity=0.85,
-        hovertemplate="Decade: %{x}<br>Avg HR: %{y:.1f}<extra></extra>",
-    ))
-    fig5.add_trace(go.Scatter(
-        x=decade_stats["decade_label"], y=decade_stats["batting_avg"],
-        name="Avg BA", mode="lines+markers",
-        line=dict(color=TEAL, width=2.5),
-        marker=dict(size=7, color=TEAL),
-        yaxis="y2",
-        hovertemplate="Decade: %{x}<br>Avg BA: %{y:.3f}<extra></extra>",
-    ))
+
+    if bar_col and bar_col in decade_stats.columns:
+        # Detect whether bar stat is a decimal (avg/rate) or integer (count)
+        is_bar_decimal = decade_stats[bar_col].max() < 10
+        bar_fmt = ".3f" if is_bar_decimal else ".1f"
+        fig5.add_trace(go.Bar(
+            x=decade_stats["decade_label"], y=decade_stats[bar_col],
+            name=f"Avg {bar_label}", marker_color=RED, opacity=0.85,
+            hovertemplate=f"Decade: %{{x}}<br>Avg {bar_label}: %{{y:{bar_fmt}}}<extra></extra>",
+        ))
+
+    if line_col and line_col in decade_stats.columns:
+        is_line_decimal = decade_stats[line_col].max() < 10
+        line_fmt = ".3f" if is_line_decimal else ".1f"
+        fig5.add_trace(go.Scatter(
+            x=decade_stats["decade_label"], y=decade_stats[line_col],
+            name=f"Avg {line_label}", mode="lines+markers",
+            line=dict(color=TEAL, width=2.5),
+            marker=dict(size=7, color=TEAL),
+            yaxis="y2",
+            hovertemplate=f"Decade: %{{x}}<br>Avg {line_label}: %{{y:{line_fmt}}}<extra></extra>",
+        ))
+
     fig5.update_layout(
         **{k: v for k, v in PL.items() if k != "yaxis"},
-        title="Average Home Runs and Batting Average by Decade",
+        title=f"Avg {bar_label} (bars) and Avg {line_label} (line) by Decade",
         barmode="group",
         height=320,
-        yaxis=dict(title="Avg HR", gridcolor="#1e2d45", zerolinecolor="#1e2d45",
-                   tickfont=dict(color="#6b7a99")),
-        yaxis2=dict(title="Avg BA", overlaying="y", side="right",
+        yaxis=dict(title=f"Avg {bar_label}", gridcolor="#1e2d45",
+                   zerolinecolor="#1e2d45", tickfont=dict(color="#6b7a99")),
+        yaxis2=dict(title=f"Avg {line_label}", overlaying="y", side="right",
                     tickfont=dict(color=TEAL), showgrid=False),
     )
     st.plotly_chart(fig5, use_container_width=True)
 else:
     st.info("Not enough data to show decade summary.")
 
-# -----------------------------------------------------------------------------
-# STAT LEADERS TABLE
-# -----------------------------------------------------------------------------
+# Stat leaders table
 
 st.markdown('<div class="sec-head"><span class="dot"></span>Stat Leaders</div>', unsafe_allow_html=True)
 st.markdown('<p class="chart-desc">Every league leader entry from the scraped events table. Use the <b>Stat Category</b> filter in the sidebar to narrow to one stat. Use <b>Season Range</b> and <b>League</b> to further refine.</p>', unsafe_allow_html=True)
@@ -694,16 +697,14 @@ else:
                  if c in filtered_events.columns]
     ev_sorted = filtered_events[show_cols].sort_values("year", ascending=False)
 
-    # Known junk: division headers, team win-total rows, section labels
+    # Filter out any junk rows that slipped through cleaning
     JUNK_STATS = {"East", "West", "Central", "A.L.", "N.L."}
     JUNK_PLAYERS = {"Team | Roster"}
     if "statistic" in ev_sorted.columns:
         ev_sorted = ev_sorted[~ev_sorted["statistic"].isin(JUNK_STATS)]
     if "player" in ev_sorted.columns:
         ev_sorted = ev_sorted[~ev_sorted["player"].isin(JUNK_PLAYERS)]
-        # Drop rows where player is a number (team win-total rows)
         ev_sorted = ev_sorted[~ev_sorted["player"].str.match(r"^\d+$", na=False)]
-    # Drop rows with null/zero value that slipped through
     if "value" in ev_sorted.columns:
         ev_sorted = ev_sorted[ev_sorted["value"].notna() & (ev_sorted["value"] != 0)]
 
@@ -712,12 +713,10 @@ else:
     def fmt_val(val):
         try:
             f = float(val)
-            # Show as integer if it is a whole number (e.g. 44.0 -> 44)
             return str(int(f)) if f == int(f) else f"{f:.3f}"
         except (TypeError, ValueError):
             return str(val)
 
-    # Render as styled HTML table
     rows_html = ""
     for _, r in ev_sorted.iterrows():
         league = str(r.get("league",""))
@@ -748,9 +747,7 @@ else:
 
 st.markdown("---")
 
-# -----------------------------------------------------------------------------
-# RAW DATA EXPLORER
-# -----------------------------------------------------------------------------
+# Raw data explorer at the bottom of the page
 
 with st.expander("Raw Data Explorer", expanded=False):
     tab1, tab2 = st.tabs(["Players", "Events"])
